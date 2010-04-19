@@ -1,5 +1,5 @@
 ---
-title: License for Java EditLine
+title: License for Grizzled SLF4J
 layout: default
 ---
 
