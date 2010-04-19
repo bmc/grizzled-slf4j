@@ -71,6 +71,18 @@ with posterous.Publish
     val slf4j = "org.slf4j" % "slf4j-api" % "1.5.11";
 
     /* ---------------------------------------------------------------------- *\
+                                Publishing
+    \* ---------------------------------------------------------------------- */
+
+    // "publish" will prompt (via a Swing pop-up) for the username and
+    // password.
+    lazy val publishTo = Resolver.sftp("clapper.org Maven Repo",
+                                       "maven.clapper.org",
+                                       "/var/www/maven.clapper.org/html")
+
+    override def managedStyle = ManagedStyle.Maven
+
+    /* ---------------------------------------------------------------------- *\
                          Custom tasks and actions
     \* ---------------------------------------------------------------------- */
 
