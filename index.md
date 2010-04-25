@@ -11,7 +11,7 @@ under a BSD license.
 
 ## Installation
 
-The easiest way to install the Grizzled Scala library is to download a
+The easiest way to install the Grizzled SLF4J library is to download a
 pre-compiled jar from the [*clapper.org* Maven repository][]. However, you
 can also get certain build tools to download it for you.
 
@@ -54,12 +54,48 @@ Windows), run:
 
     sbt update
 
-That command will pull down the external jars on which the Grizzled Scala
+That command will pull down the external jars on which the Grizzled SLF4J
 Library depends. After that step, build the library with:
 
     sbt compile package
 
 The resulting jar file will be in the top-level `target` directory.
+
+## Using the Grizzled SLF4J library
+
+Grizzled SLF4J is a thin, Scala-friendly wrapper around SLF4J. It's simpler
+to use than direct SLF4J, primarily because it uses Scala's
+[call-by-name][] magic so that you can use make logger calls easily,
+without incurring any overhead.
+
+For example, the various logging methods are defined as follows:
+
+    def debug(message: => String)
+
+Thus, `debug()` isn't a method taking a string; instead, it's a method taking
+a function that *returns* a string. Under the covers, `debug()` does what
+you'd expect:
+
+    def debug(message: => String) =
+        if (debugIsEnabled) log(message)
+
+However, because `message` is a function that returns a string, it isn't
+evaluated until it is called--which is *after* the test that determines
+whether it *should* be logged.
+
+Because of Scala's rich syntactic sugar, you can still call `debug()` in
+a straightforward way:
+
+    log.debug("Failed to open file \"" + file.getCanonicalPath + "\"")
+
+However, the argument to `debug()` is a function, not a string, so the
+string concatenation and the call to `file.getCanonicalPath` do not happen
+until and unless the `debug()` function determines that debug logging is
+enabled.
+
+Thus, Grizzled SLF4J gives you a simple, Scala-friendly API for SLF4J (with
+no need to use SLF4J format strings), while retaining the performance
+benefits of delayed evaluation.
 
 ## API Documentation
 
@@ -99,4 +135,4 @@ request. Along with any patch you send:
 [bmc@clapper.org]: mailto:bmc@clapper.org
 [Grizzled SLF4J]: http://bmc.github.com/grizzled-scala/
 [SLF4J]: http://slf4j.org/
-
+[call-by-name]: http://eed3si9n.com/scala-and-evaluation-strategy
