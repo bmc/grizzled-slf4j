@@ -97,6 +97,41 @@ Thus, Grizzled SLF4J gives you a simple, Scala-friendly API for SLF4J (with
 no need to use SLF4J format strings), while retaining the performance
 benefits of delayed evaluation.
 
+### Getting a Logger
+
+To get a logger, use the `Logger` object and pass it a name or a class.
+(By convention, the name should be a class name.)
+
+    import grizzled.slf4j.Logger
+
+    val logger = Logger("org.example.foo")
+
+### Logging messages
+
+The `Logger` class supports the following methods:
+
+    def debug(msg => AnyRef, t: => Throwable): Unit
+    def debug(msg => AnyRef, t: => Throwable): Unit
+    def isDebugEnabled: Boolean
+
+    error(msg => AnyRef, t: => Throwable)
+    error(msg => AnyRef, t: => Throwable)
+    def isErrorEnabled: Boolean
+
+    info(msg => AnyRef, t: => Throwable)
+    info(msg => AnyRef, t: => Throwable)
+    def isInfoEnabled: Boolean
+
+    trace(msg => AnyRef, t: => Throwable)
+    trace(msg => AnyRef, t: => Throwable)
+    def isTraceEnabled: Boolean
+
+    warn(msg => AnyRef, t: => Throwable)
+    warn(msg => AnyRef, t: => Throwable)
+    def isWarnEnabled: Boolean
+
+See the [API documentation][] for complete details.
+
 ## API Documentation
 
 The Scaladoc-generated the [API documentation][] is available locally.
