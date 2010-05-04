@@ -28,7 +28,7 @@ compilation. (See the [SBT cross-building][] page for details.)
 If you're using [Maven][], you can get Grizzled SLF4J from the
 [*clapper.org* Maven Repository][]. The relevant pieces of information are:
 
-* Group ID: `clapper.org`
+* Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
 * Version: `0.2`
 * Type: `jar`
@@ -40,7 +40,7 @@ sample Maven "dependency" snippets for both:
 Scala 2.7.7:
 
     <dependency>
-      <groupId>clapper.org</groupId>
+      <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
       <version>0.2</version>
     </dependency>
@@ -48,7 +48,7 @@ Scala 2.7.7:
 Scala 2.8.0.RC1:
 
     <dependency>
-      <groupId>clapper.org</groupId>
+      <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.8.0.RC1</artifactId>
       <version>0.2</version>
     </dependency>
