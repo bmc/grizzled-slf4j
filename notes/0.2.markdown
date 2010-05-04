@@ -1,0 +1,2 @@
+* Now cross-built against both Scala 2.8.0.RC1 and Scala 2.7.7, per a
+  request from Ermanno Franco (ermanno.franco */at/* gmail.com).

@@ -86,7 +86,7 @@ with posterous.Publish
                          Custom tasks and actions
     \* ---------------------------------------------------------------------- */
 
-    override def disableCrossPaths = true
+    //override def disableCrossPaths = true
 
     /* ---------------------------------------------------------------------- *\
                           Private Helper Methods
