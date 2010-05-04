@@ -15,19 +15,43 @@ The easiest way to install the Grizzled SLF4J library is to download a
 pre-compiled jar from the [*clapper.org* Maven repository][]. However, you
 can also get certain build tools to download it for you.
 
-### Installing for Maven
+### First step: What version of Scala are you using?
+
+Grizzled SLF4J is compiled against Scala 2.7.7 and Scala 2.8.0, via [SBT][]
+(the Simple Build Tool), and published to the
+[*clapper.org* Maven Repository][]. The Scala version is embedded in the
+name of published artifact, because that's how [SBT][] handles cross-version
+compilation. (See the [SBT cross-building][] page for details.)
+
+### Installing with Maven
 
 If you're using [Maven][], you can get Grizzled SLF4J from the
 [*clapper.org* Maven Repository][]. The relevant pieces of information are:
 
 * Group ID: `clapper.org`
-* Artifact ID: `grizzled-slf4j`
-* Version: `0.1`
+* Artifact ID: `grizzled-slf4j_`*scala-version*
+* Version: `0.2`
 * Type: `jar`
 * Repository: `http://maven.clapper.org/`
 
-Creating the appropriate Maven configuration items is left as an exercise
-for the reader.
+Substitute either "2.7.7" or "2.8.0.RC1" for *scala-version*. Here are
+sample Maven "dependency" snippets for both:
+
+Scala 2.7.7:
+
+    <dependency>
+      <groupId>clapper.org</groupId>
+      <artifactId>grizzled-slf4j_2.7.7</artifactId>
+      <version>0.2</version>
+    </dependency>
+
+Scala 2.8.0.RC1:
+
+    <dependency>
+      <groupId>clapper.org</groupId>
+      <artifactId>grizzled-slf4j_2.8.0.RC1</artifactId>
+      <version>0.2</version>
+    </dependency>
 
 ### Using with SBT
 
@@ -37,16 +61,32 @@ your `project/build/` directory):
 
     val orgClapperRepo = "clapper.org Maven Repository" at
         "http://maven.clapper.org"
-    val grizzled = "org.clapper" % "grizzled-slf4j" % "0.1"
+    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.1"
 
-## Source Code Repository
+**NOTE:** The first doubled percent is *not* a typo. It tells SBT to treat
+Grizzled-SLF4J as a cross-built library and automatically inserts the Scala
+version you're using into the artifact ID. It will *only* work if you are
+building with Scala 2.7.7 or Scala 2.8.0.RC1. See the
+[SBT cross-building][] page for details.
+
+## Building from Source
+
+You can also build Grizzled SLF4J from source. There are two ways to get
+the source:
+
+### Downloading a snapshot of the source
+
+You can download a tarball or zip file of the source from the
+[downloads page][].
+
+### Source Code Repository
 
 The source code for Grizzled SLF4J is maintained on [GitHub][]. To clone
 the repository, run this command:
 
     git clone git://github.com/bmc/grizzled-slf4j.git
 
-## Building from Source
+### Building
 
 Building the library requires [SBT][]. Install SBT, as described at the SBT
 web site. Then, assuming you have an `sbt` shell script (or .BAT file, for
@@ -57,9 +97,10 @@ Windows), run:
 That command will pull down the external jars on which the Grizzled SLF4J
 Library depends. After that step, build the library with:
 
-    sbt compile package
+    sbt +compile +package
 
-The resulting jar file will be in the top-level `target` directory.
+The resulting jar files will be under the top-level `target` directory, in
+subdirectories specific to each Scala version.
 
 ## Using the Grizzled SLF4J library
 
@@ -163,7 +204,7 @@ request. Along with any patch you send:
 [API Documentation]: apidocs/
 [GitHub repository]: http://github.com/bmc/grizzled-slf4j
 [GitHub]: http://github.com/bmc/
-[downloads area]: http://github.com/bmc/grizzled-scala/downloads
+[downloads page]: http://github.com/bmc/grizzled-slf4j/downloads
 [*clapper.org* Maven repository]: http://maven.clapper.org/org/clapper/
 [Maven]: http://maven.apache.org/
 [SBT]: http://code.google.com/p/simple-build-tool
@@ -171,3 +212,4 @@ request. Along with any patch you send:
 [Grizzled SLF4J]: http://bmc.github.com/grizzled-scala/
 [SLF4J]: http://slf4j.org/
 [call-by-name]: http://eed3si9n.com/scala-and-evaluation-strategy
+[SBT cross-building]: http://code.google.com/p/simple-build-tool/wiki/CrossBuild
