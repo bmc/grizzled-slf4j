@@ -68,7 +68,7 @@ with posterous.Publish
     val scalaToolsRepo = "Scala-Tools Maven Repository" at 
         "http://scala-tools.org/repo-releases/"
 
-    val slf4j = "org.slf4j" % "slf4j-api" % "1.5.11";
+    val slf4j = "org.slf4j" % "slf4j-api" % "1.6.0"
 
     /* ---------------------------------------------------------------------- *\
                                 Publishing

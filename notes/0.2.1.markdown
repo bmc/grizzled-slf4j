@@ -1,0 +1,3 @@
+* Updated to [SLF4J][] version 1.6.0.
+
+[SLF4J]: http://slf4j.org/
