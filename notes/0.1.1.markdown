@@ -1,1 +1,0 @@
-* Updated to `posterous-sbt` plugin, version 0.1.5.
