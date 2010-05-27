@@ -47,7 +47,7 @@ import java.io.File
 class GrizzledSLF4JProject(info: ProjectInfo)
 extends DefaultProject(info)
 with posterous.Publish
-with sxr.Publish
+//with sxr.Publish
 {
     /* ---------------------------------------------------------------------- *\
                          Compiler and SBT Options
