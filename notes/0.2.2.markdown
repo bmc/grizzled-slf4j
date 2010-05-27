@@ -1,6 +1,8 @@
 * Updated to [SBT][] version 0.7.4.
 * Now uses [sxr-publish][] to enable publishing source code to
   *sourced.implicit.ly*.
+* Now compiles with Scala 2.8.0.RC3, as well as Scala-2.8.0.RC2 and
+  Scala 2.7.7. Dropped support for Scala-2.8.0.RC1.
 
 [SBT]: http://code.google.com/p/simple-build-tool/
 [sxr-publish]: http://github.com/n8han/sxr-publish
