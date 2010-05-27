@@ -30,11 +30,11 @@ If you're using [Maven][], you can get Grizzled SLF4J from the
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.2.1`
+* Version: `0.2.2`
 * Type: `jar`
 * Repository: `http://maven.clapper.org/`
 
-Substitute either "2.7.7", "2.8.0.RC1" or "2.8.0.RC2" for *scala-version*.
+Substitute either "2.7.7", "2.8.0.RC3" or "2.8.0.RC2" for *scala-version*.
 Examples:
 
 Scala 2.7.7:
@@ -42,15 +42,15 @@ Scala 2.7.7:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.2.1</version>
+      <version>0.2.2</version>
     </dependency>
 
-Scala 2.8.0.RC2:
+Scala 2.8.0.RC3:
 
     <dependency>
       <groupId>org.clapper</groupId>
-      <artifactId>grizzled-slf4j_2.8.0.RC2</artifactId>
-      <version>0.2.1</version>
+      <artifactId>grizzled-slf4j_2.8.0.RC3</artifactId>
+      <version>0.2.2</version>
     </dependency>
 
 ### Using with SBT
@@ -61,12 +61,12 @@ your `project/build/` directory):
 
     val orgClapperRepo = "clapper.org Maven Repository" at
         "http://maven.clapper.org"
-    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.1"
+    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.2.2"
 
 **NOTE:** The first doubled percent is *not* a typo. It tells SBT to treat
 Grizzled-SLF4J as a cross-built library and automatically inserts the Scala
 version you're using into the artifact ID. It will *only* work if you are
-building with Scala 2.7.7, Scala 2.8.0.RC1 or Scala 2.8.0.RC2. See the
+building with Scala 2.7.7, Scala 2.8.0.RC3 or Scala 2.8.0.RC2. See the
 [SBT cross-building][] page for details.
 
 ## Building from Source
