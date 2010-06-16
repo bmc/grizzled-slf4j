@@ -1,0 +1,4 @@
+* Now compiles with Scala 2.8.0.RC5, as well as Scala-2.8.0.RC3 and
+  Scala 2.7.7. Dropped support for Scala-2.8.0.RC2.
+
+[SBT]: http://code.google.com/p/simple-build-tool/
