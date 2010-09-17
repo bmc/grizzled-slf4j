@@ -12,46 +12,58 @@ under a BSD license.
 ## Installation
 
 The easiest way to install the Grizzled SLF4J library is to download a
-pre-compiled jar from the [*clapper.org* Maven repository][]. However, you
-can also get certain build tools to download it for you.
+pre-compiled jar from the [Scala Tools Maven repository][]. However, you
+can also get certain build tools to download it for you automatically.
 
 ### First step: What version of Scala are you using?
 
 Grizzled SLF4J is compiled against Scala 2.7.7 and Scala 2.8.0, via [SBT][]
 (the Simple Build Tool), and published to the
-[*clapper.org* Maven Repository][]. The Scala version is embedded in the
-name of published artifact, because that's how [SBT][] handles cross-version
+[Scala Tools Maven repository][]. The Scala version is embedded in the name
+of published artifact, because that's how [SBT][] handles cross-version
 compilation. (See the [SBT cross-building][] page for details.)
 
 ### Installing with Maven
 
-If you're using [Maven][], you can get Grizzled SLF4J from the
-[*clapper.org* Maven Repository][]. The relevant pieces of information are:
+If you're using [Maven][], you can simply tell Maven to get Grizzled SLF4J
+from the [Scala Tools Maven repository][]. The relevant pieces of
+information are:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.2.4`
+* Version: `0.3`
 * Type: `jar`
-* Repository: `http://maven.clapper.org/`
+* Repository: `http://www.scala-tools.org/repo-releases/`
 
-Substitute either "2.7.7" or "2.8.0" for *scala-version*.
-Examples:
+Your `<repositories>` section will need to contain the Scala Tools repo:
 
-Scala 2.7.7:
+    <repositories>
+      <repository>
+        <id>scala-tools.org</id>
+          <name>Scala-tools Maven2 Repository</name>
+          <url>http://scala-tools.org/repo-releases</url>
+      </repository>
+    </repositories>
+
+Then, you must specify the appropriate Grizzled SLF4J dependency, which
+is version-sensitive. For Scala 2.7.7, use:
 
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.2.4</version>
+      <version>0.3</version>
     </dependency>
 
-Scala 2.8.0.final:
+For Scala 2.8.0, use:
 
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.8.0</artifactId>
-      <version>0.2.4</version>
+      <version>0.3</version>
     </dependency>
+
+For more information on using Maven and Scala, see Josh Suereth's
+[Scala Maven Guide][].
 
 ### Using with SBT
 
@@ -59,15 +71,20 @@ If you're using [SBT][] (the Simple Build Tool) to compile your code, you
 can place the following lines in your project file (i.e., the Scala file in
 your `project/build/` directory):
 
-    val orgClapperRepo = "clapper.org Maven Repository" at
-        "http://maven.clapper.org"
-    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.2.4"
+    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.3"
 
-**NOTE:** The first doubled percent is *not* a typo. It tells SBT to treat
-Grizzled-SLF4J as a cross-built library and automatically inserts the Scala
-version you're using into the artifact ID. It will *only* work if you are
-building with Scala 2.7.7 or Scala 2.8.0 (final). See the
-[SBT cross-building][] page for details.
+**NOTES**
+
+1. The first doubled percent is *not* a typo. It tells SBT to treat
+   Grizzled SLF4J as a cross-built library and automatically inserts the
+   Scala version you're using into the artifact ID. It will *only* work if
+   you are building with Scala 2.7.7 or Scala 2.8.0 (final). See the
+   [SBT cross-building][] page for details.
+
+2. Prior to Grizzled SLF4J, version 0.3, you also had to specify the
+   location of a custom Maven repository. With version 0.3, however,
+   Grizzled SLF4J is now being published to the
+   [Scala Tools Maven repository][], which SBT automatically searches.
 
 ## Building from Source
 
@@ -92,7 +109,7 @@ Building the library requires [SBT][]. Install SBT, as described at the SBT
 web site. Then, assuming you have an `sbt` shell script (or .BAT file, for
 Windows), run:
 
-    sbt update
+    sbt +update
 
 That command will pull down the external jars on which the Grizzled SLF4J
 Library depends. After that step, build the library with:
@@ -180,6 +197,10 @@ In addition, you can generate your own version with:
 
     sbt doc
 
+## Change log
+
+The change log for all releases is [here][changelog].
+
 ## Author
 
 Brian M. Clapper, [bmc@clapper.org][]
@@ -205,7 +226,8 @@ request. Along with any patch you send:
 [GitHub repository]: http://github.com/bmc/grizzled-slf4j
 [GitHub]: http://github.com/bmc/
 [downloads page]: http://github.com/bmc/grizzled-slf4j/downloads
-[*clapper.org* Maven repository]: http://maven.clapper.org/org/clapper/
+[Scala Tools Maven repository]: http://www.scala-tools.org/repo-releases/
+[Scala Maven Guide]: http://www.scala-lang.org/node/345
 [Maven]: http://maven.apache.org/
 [SBT]: http://code.google.com/p/simple-build-tool
 [bmc@clapper.org]: mailto:bmc@clapper.org
@@ -213,3 +235,4 @@ request. Along with any patch you send:
 [SLF4J]: http://slf4j.org/
 [call-by-name]: http://eed3si9n.com/scala-and-evaluation-strategy
 [SBT cross-building]: http://code.google.com/p/simple-build-tool/wiki/CrossBuild
+[changelog]: changelog.html
