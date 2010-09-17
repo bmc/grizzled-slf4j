@@ -9,7 +9,7 @@ Version 0.3:
   includes by default. Thus, if you're using SBT, it's longer necessary to
   specify a custom repository to find this artifact.
 
-[Scala Tools Nexus]: http://www.scala-tools.org/repo-releases/
+[Scala Tools Maven repository]: http://www.scala-tools.org/repo-releases/
 [SBT]: http://code.google.com/p/simple-build-tool/
 
 Version 0.2.4:
