@@ -1,5 +1,5 @@
 ---
-title: License for Grizzled SLF4J
+title: Change log for Grizzled SLF4J
 layout: default
 ---
 
