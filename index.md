@@ -31,7 +31,7 @@ information are:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.3`
+* Version: `0.3.2`
 * Type: `jar`
 * Repository: `http://www.scala-tools.org/repo-releases/`
 
@@ -51,16 +51,18 @@ is version-sensitive. For Scala 2.7.7, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.3</version>
+      <version>0.3.2</version>
     </dependency>
 
-For Scala 2.8.0, use:
+For Scala 2.8.1, use:
 
     <dependency>
       <groupId>org.clapper</groupId>
-      <artifactId>grizzled-slf4j_2.8.0</artifactId>
+      <artifactId>grizzled-slf4j_2.8.1</artifactId>
       <version>0.3</version>
     </dependency>
+
+There are versions of this API for Scala 2.7.7, 2.8.0 and 2.8.1.
 
 For more information on using Maven and Scala, see Josh Suereth's
 [Scala Maven Guide][].
@@ -71,19 +73,19 @@ If you're using [SBT][] (the Simple Build Tool) to compile your code, you
 can place the following lines in your project file (i.e., the Scala file in
 your `project/build/` directory):
 
-    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.3"
+    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.3.2"
 
 **NOTES**
 
 1. The first doubled percent is *not* a typo. It tells SBT to treat
    Grizzled SLF4J as a cross-built library and automatically inserts the
    Scala version you're using into the artifact ID. It will *only* work if
-   you are building with Scala 2.7.7 or Scala 2.8.0 (final). See the
-   [SBT cross-building][] page for details.
+   you are building with Scala 2.7.7, Scala 2.8.0 (final) or Scala 2.8.1
+   (final). See the [SBT cross-building][] page for details.
 
 2. Prior to Grizzled SLF4J, version 0.3, you also had to specify the
-   location of a custom Maven repository. With version 0.3, however,
-   Grizzled SLF4J is now being published to the
+   location of a custom Maven repository. With version 0.3 and later,
+   however, Grizzled SLF4J is now being published to the
    [Scala Tools Maven repository][], which SBT automatically searches.
 
 ## Building from Source
