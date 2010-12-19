@@ -233,7 +233,7 @@ request. Along with any patch you send:
 [Maven]: http://maven.apache.org/
 [SBT]: http://code.google.com/p/simple-build-tool
 [bmc@clapper.org]: mailto:bmc@clapper.org
-[Grizzled SLF4J]: http://bmc.github.com/grizzled-slf4j/
+[Grizzled SLF4J]: http://software.clapper.org/grizzled-slf4j/
 [SLF4J]: http://slf4j.org/
 [call-by-name]: http://eed3si9n.com/scala-and-evaluation-strategy
 [SBT cross-building]: http://code.google.com/p/simple-build-tool/wiki/CrossBuild
