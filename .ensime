@@ -1,0 +1,13 @@
+;; This config was generated using ensime-config-gen. Feel free to customize its contents manually. 
+
+(
+
+:project-package "grizzled.slf4j"
+
+:use-sbt t
+
+:classpath (
+    (directory-files "lib_managed/scala_2.8.1/compile", nil, "slf4j.*\\.jar")
+    (directory-files "lib_managed/scala_2.8.1/test", nil, "scalatest.*\\.jar")
+  )
+)
