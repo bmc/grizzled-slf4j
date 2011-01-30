@@ -1,7 +1,7 @@
 * Updated to version 1.6.1 of the [SLF4J][] library.
 * Added a `Logging` trait that can be mixed into a class, providing logging
   functions and a `Logger`, without changing the public API (similar to the
-  [`Logging`][scalate-logging] trait in the [Scalate][] source. Addresses
+  [Logging][scalate-logging] trait in the [Scalate][] source). Addresses
   [Issue #1][issue-1].
 
 [Scala]: http://www.scala-lang.org/
