@@ -31,7 +31,7 @@ information are:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.3.2`
+* Version: `0.4`
 * Type: `jar`
 * Repository: `http://www.scala-tools.org/repo-releases/`
 
@@ -51,7 +51,7 @@ is version-sensitive. For Scala 2.7.7, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.3.2</version>
+      <version>0.4</version>
     </dependency>
 
 For Scala 2.8.1, use:
@@ -59,7 +59,7 @@ For Scala 2.8.1, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.8.1</artifactId>
-      <version>0.3</version>
+      <version>0.4</version>
     </dependency>
 
 There are versions of this API for Scala 2.7.7, 2.8.0 and 2.8.1.
@@ -73,15 +73,15 @@ If you're using [SBT][] (the Simple Build Tool) to compile your code, you
 can place the following lines in your project file (i.e., the Scala file in
 your `project/build/` directory):
 
-    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.3.2"
+    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.4"
 
 **NOTES**
 
 1. The first doubled percent is *not* a typo. It tells SBT to treat
    Grizzled SLF4J as a cross-built library and automatically inserts the
    Scala version you're using into the artifact ID. It will *only* work if
-   you are building with Scala 2.7.7, Scala 2.8.0 (final) or Scala 2.8.1
-   (final). See the [SBT cross-building][] page for details.
+   you are building with Scala 2.7.7, Scala 2.8.0, or Scala 2.8.1 See the
+   [SBT cross-building][] page for details.
 
 2. Prior to Grizzled SLF4J, version 0.3, you also had to specify the
    location of a custom Maven repository. With version 0.3 and later,
@@ -165,6 +165,29 @@ To get a logger, use the `Logger` object and pass it a name or a class.
     import grizzled.slf4j.Logger
 
     val logger = Logger("org.example.foo")
+
+### Mixing in the Logging Trait
+
+As of version 0.4, this API supports a `Logging` trait. Instead of
+instantiating a `Logger` object and invoking its methods explicitly, you
+can mix the `Logging` trait into any class, which automatically:
+
+* adds logging methods (`debug`, `info`, `error`, etc.)
+* adds a lazily-instantiated `Logger` object
+* adds a `logger` property that you can use to retrieve the `Logger` object
+
+*without* changing the class's public API.
+
+This approach is similar to the `Logging` trait in the [Scalate][] source.
+(See Scalate's [Logging.scala][scalate-logging].)
+
+Example:
+
+    class Foo extends Logging
+    {
+        def test: Unit =
+            info("test")
+    }
 
 ### Logging messages
 
