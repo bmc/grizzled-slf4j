@@ -1,0 +1,4 @@
+* Updated to build against [Scala][] 2.9.0, as well as the 2.7 and 2.8 series.
+
+[Scala]: http://www.scala-lang.org/
+[SLF4J]: http://www.slf4j.org/

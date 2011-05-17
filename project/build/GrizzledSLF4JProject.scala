@@ -3,7 +3,7 @@
   This software is released under a BSD license, adapted from
   http://opensource.org/licenses/bsd-license.php
 
-  Copyright (c) 2010, Brian M. Clapper
+  Copyright (c) 2010-2011, Brian M. Clapper
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -71,8 +71,16 @@ with posterous.Publish
 
     val slf4j = "org.slf4j" % "slf4j-api" % "1.6.1"
 
-    val scalatest = "org.scalatest" % "scalatest" % "1.2" % "test"
+    val (scalatestArtifact, scalatestVersion) = buildScalaVersion match
+    {
+        case "2.7.7"           => ("scalatest", "1.2")
+        case "2.8.0"           => ("scalatest", "1.3")
+        case "2.8.1"           => ("scalatest", "1.3")
+        case "2.9.0"           => ("scalatest_2.9.0", "1.4.1")
+        case n                 => error("Unsupported Scala version " + n)
+    }
 
+    val scalatest = "org.scalatest" % scalatestArtifact % scalatestVersion % "test"
     /* ---------------------------------------------------------------------- *\
                                 Publishing
     \* ---------------------------------------------------------------------- */
