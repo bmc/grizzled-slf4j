@@ -3,14 +3,49 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.5:
+
+* Updated to build against [Scala][] 2.9.0, as well as the 2.7 and 2.8 series.
+
+[Scala]: http://www.scala-lang.org/
+[SLF4J]: http://www.slf4j.org/
+
+Version 0.4:
+
+* Updated to version 1.6.1 of the [SLF4J][] library.
+* Added a `Logging` trait that can be mixed into a class, providing logging
+  functions and a `Logger`, without changing the public API (similar to the
+  [Logging][scalate-logging] trait in the [Scalate][] source). Addresses
+  [Issue #1][issue-1].
+
+[Scala]: http://www.scala-lang.org/
+[SLF4J]: http://www.slf4j.org/
+[scalate-logging]: https://github.com/scalate/scalate/blob/master/scalate-util/src/main/scala/org/fusesource/scalate/util/Logging.scala
+[scalate]: http://scalate.fusesource.org/
+[issue-1]: https://github.com/bmc/grizzled-slf4j/issues#issue/1
+
+
+Version 0.3.2:
+
+* Now builds against [Scala][] 2.8.1, as well as 2.8.0 and 2.7.7.
+
+[Scala]: http://www.scala-lang.org/
+
+Version 0.3.1:
+
+* Now compiles against [Scala][] 2.8.1 RC1, as well as 2.8.0 and 2.7.7.
+
+[Scala]: http://www.scala-lang.org/
+
 Version 0.3:
 
 * Now published to the [Scala Tools Maven repository][], which [SBT][]
   includes by default. Thus, if you're using SBT, it's longer necessary to
   specify a custom repository to find this artifact.
 
-[Scala Tools Maven repository]: http://www.scala-tools.org/repo-releases/
+[Scala Tools Maven Repository]: http://www.scala-tools.org/repo-releases/
 [SBT]: http://code.google.com/p/simple-build-tool/
+[Scala]: http://www.scala-lang.org/
 
 Version 0.2.4:
 

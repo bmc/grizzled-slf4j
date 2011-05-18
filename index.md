@@ -260,4 +260,4 @@ request. Along with any patch you send:
 [SLF4J]: http://slf4j.org/
 [call-by-name]: http://eed3si9n.com/scala-and-evaluation-strategy
 [SBT cross-building]: http://code.google.com/p/simple-build-tool/wiki/CrossBuild
-[changelog]: changelog.html
+[changelog]: CHANGELOG.html
