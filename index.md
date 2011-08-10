@@ -31,7 +31,7 @@ information are:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.4`
+* Version: `0.6`
 * Type: `jar`
 * Repository: `http://www.scala-tools.org/repo-releases/`
 
@@ -51,42 +51,40 @@ is version-sensitive. For Scala 2.7.7, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.5</version>
+      <version>0.6</version>
     </dependency>
 
-For Scala 2.9.0, use:
+For Scala 2.9.0-1, use:
 
     <dependency>
       <groupId>org.clapper</groupId>
-      <artifactId>grizzled-slf4j_2.9.0</artifactId>
-      <version>0.5</version>
+      <artifactId>grizzled-slf4j_2.9.0-1</artifactId>
+      <version>0.6</version>
     </dependency>
 
-There are versions of this API for Scala 2.7.7, 2.8.0, 2.8.1 and 2.9.0.
+There are versions of this API for Scala 2.7.7, 2.8.0, 2.8.1, 2.9.0 and 2.9.0-1.
 
 For more information on using Maven and Scala, see Josh Suereth's
 [Scala Maven Guide][].
 
 ### Using with SBT
 
-If you're using [SBT][] (the Simple Build Tool) to compile your code, you
-can place the following lines in your project file (i.e., the Scala file in
-your `project/build/` directory):
+#### 0.7.x
 
-    val grizzled = "org.clapper" %% "grizzled-slf4j" % "0.5"
+If you're using [SBT][] 0.7.x to compile your code, you can place the
+following line in your project file (i.e., the Scala file in your
+`project/build/` directory):
 
-**NOTES**
+    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j % "0.6"
 
-1. The first doubled percent is *not* a typo. It tells SBT to treat
-   Grizzled SLF4J as a cross-built library and automatically inserts the
-   Scala version you're using into the artifact ID. It will *only* work if
-   you are building with Scala 2.7.7, Scala 2.8.0, or Scala 2.8.1 See the
-   [SBT cross-building][] page for details.
+#### 0.10.x
 
-2. Prior to Grizzled SLF4J, version 0.3, you also had to specify the
-   location of a custom Maven repository. With version 0.3 and later,
-   however, Grizzled SLF4J is now being published to the
-   [Scala Tools Maven repository][], which SBT automatically searches.
+If you're using [SBT][] 0.10.x to compile your code, you can use the
+following line in your `build.sbt` file (for Quick Configuration). If
+you're using an SBT 0.10.x Full Configuration, you're obviously smart
+enough to figure out what to do, on your own.
+
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j % "0.6"
 
 ## Building from Source
 

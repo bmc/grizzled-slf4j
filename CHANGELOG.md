@@ -3,6 +3,11 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6:
+
+* Now builds against Scala 2.9.0-1, as well as Scala 2.9.0, 2.8.1, 2.8.0 and 2.7.7.
+* Converted to build with [SBT][] 0.10.1
+
 Version 0.5:
 
 * Updated to build against [Scala][] 2.9.0, as well as the 2.7 and 2.8 series.
@@ -23,7 +28,6 @@ Version 0.4:
 [scalate-logging]: https://github.com/scalate/scalate/blob/master/scalate-util/src/main/scala/org/fusesource/scalate/util/Logging.scala
 [scalate]: http://scalate.fusesource.org/
 [issue-1]: https://github.com/bmc/grizzled-slf4j/issues#issue/1
-
 
 Version 0.3.2:
 
