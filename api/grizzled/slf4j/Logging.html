@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>grizzled.slf4j.Logger</title>
+          <title>grizzled.slf4j.Logging</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
@@ -17,23 +17,22 @@
       <p id="owner"><a href="../package.html" class="extype" name="grizzled">grizzled</a>.<a href="package.html" class="extype" name="grizzled.slf4j">slf4j</a></p>
 
       <div id="definition">
-        <img src="../../lib/class_big.png" />
-        <h1>Logger</h1>
+        <img src="../../lib/trait_big.png" />
+        <h1>Logging</h1>
       </div>
 
       <h4 class="signature" id="signature">
-      <span class="kind">class</span>
+      <span class="kind">trait</span>
       <span class="symbol">
-        <span class="name">Logger</span>
+        <span class="name">Logging</span>
         
         
         <span class="result"> extends AnyRef</span>
       </span>
       </h4>
-      <div class="fullcomment" id="comment"><div class="comment cmt"><p>Scala front-end to a SLF4J logger.
+      <div class="fullcomment" id="comment"><div class="comment cmt"><p>Mix the <code>Logging</code> trait into a class to get:</p><p>- Logging methods
+- A <code>Logger</code> object, accessible via the <code>log</code> property</p><p>Does not affect the public API of the class mixing it in.
 </p></div><div class="block">
-            go to: <a href="Logger$.html">companion</a>
-          </div><div class="block">
             linear super types: AnyRef, <span class="extype" name="scala.Any">Any</span>
           </div>
             
@@ -52,7 +51,7 @@
           <div id="ancestors">
                 <span class="filtertype">Inherited</span>
                 <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
-                <ol id="linearization"><li class="in" name="grizzled.slf4j.Logger">Logger</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+                <ol id="linearization"><li class="in" name="grizzled.slf4j.Logging">Logging</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
               </div>
           <div id="visbl">
               <span class="filtertype">Visibility</span>
@@ -64,22 +63,7 @@
             </div>
         </div>
 
-        <div class="members" id="constructors">
-              <h3>Instance constructors</h3>
-              <ol><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#this">
-      <a id="this:Logger"></a>
-      <h4 class="signature">
-      <span class="kind">new</span>
-      <span class="symbol">
-        <span class="name">Logger</span>
         
-        <span class="params">(<span name="logger">logger: <span class="extype" name="org.slf4j.Logger">Logger</span></span>)</span>
-        
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
 
         
 
@@ -282,7 +266,7 @@ part of compilation it is not possible to check whether the contents of the list
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#debug">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#debug">
       <a id="debug(⇒ AnyRef,⇒ Throwable):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -299,14 +283,14 @@ part of compilation it is not possible to check whether the contents of the list
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.</p></dd><dt class="param">t</dt><dd class="cmt"><p>the exception to include with the logged message.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#debug">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#debug">
       <a id="debug(⇒ AnyRef):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -323,7 +307,7 @@ part of compilation it is not possible to check whether the contents of the list
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
@@ -399,7 +383,7 @@ scala.Int
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#error">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#error">
       <a id="error(⇒ AnyRef,⇒ Throwable):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -416,14 +400,14 @@ scala.Int
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.</p></dd><dt class="param">t</dt><dd class="cmt"><p>the exception to include with the logged message.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#error">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#error">
       <a id="error(⇒ AnyRef):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -440,7 +424,7 @@ scala.Int
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
@@ -522,7 +506,7 @@ to verify that the behavior is consistent with the <code>equals</code> method.
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#info">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#info">
       <a id="info(⇒ AnyRef,⇒ Throwable):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -539,14 +523,14 @@ to verify that the behavior is consistent with the <code>equals</code> method.
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.</p></dd><dt class="param">t</dt><dd class="cmt"><p>the exception to include with the logged message.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#info">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#info">
       <a id="info(⇒ AnyRef):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -563,14 +547,14 @@ to verify that the behavior is consistent with the <code>equals</code> method.
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#isDebugEnabled">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#isDebugEnabled">
       <a id="isDebugEnabled:Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -585,14 +569,14 @@ to verify that the behavior is consistent with the <code>equals</code> method.
             <p class="shortcomment cmt">Determine whether debug logging is enabled.</p>
             <div class="fullcomment"><div class="comment cmt"><p>Determine whether debug logging is enabled.
 </p></div><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#isErrorEnabled">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#isErrorEnabled">
       <a id="isErrorEnabled:Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -607,14 +591,14 @@ to verify that the behavior is consistent with the <code>equals</code> method.
             <p class="shortcomment cmt">Determine whether trace logging is enabled.</p>
             <div class="fullcomment"><div class="comment cmt"><p>Determine whether trace logging is enabled.
 </p></div><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#isInfoEnabled">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#isInfoEnabled">
       <a id="isInfoEnabled:Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -629,7 +613,7 @@ to verify that the behavior is consistent with the <code>equals</code> method.
             <p class="shortcomment cmt">Determine whether trace logging is enabled.</p>
             <div class="fullcomment"><div class="comment cmt"><p>Determine whether trace logging is enabled.
 </p></div><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
@@ -662,7 +646,7 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#isTraceEnabled">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#isTraceEnabled">
       <a id="isTraceEnabled:Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -677,14 +661,14 @@ possible to check whether the contents of the list are of the requested typed.
             <p class="shortcomment cmt">Determine whether trace logging is enabled.</p>
             <div class="fullcomment"><div class="comment cmt"><p>Determine whether trace logging is enabled.
 </p></div><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#isWarnEnabled">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#isWarnEnabled">
       <a id="isWarnEnabled:Boolean"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -699,31 +683,41 @@ possible to check whether the contents of the list are of the requested typed.
             <p class="shortcomment cmt">Determine whether trace logging is enabled.</p>
             <div class="fullcomment"><div class="comment cmt"><p>Determine whether trace logging is enabled.
 </p></div><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#logger">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#logger">
       <a id="logger:Logger"></a>
       <h4 class="signature">
-      <span class="kind">val</span>
+      <span class="kind">def</span>
       <span class="symbol">
         <span class="name">logger</span>
         
         
-        <span class="result">: <span class="extype" name="org.slf4j.Logger">Logger</span></span>
+        <span class="result">: <a href="Logger.html" class="extype" name="grizzled.slf4j.Logger">Logger</a></span>
       </span>
       </h4>
       
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#name">
-      <a id="name:String"></a>
+            <p class="shortcomment cmt">Get the <code>Logger</code> for the class that mixes this trait in.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Get the <code>Logger</code> for the class that mixes this trait in. The <code>Logger</code>is created the first time this method is call. The other methods (e.g.,<code>error</code>, <code>info</code>, etc.) call this method to get the logger.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the <code>Logger</code></p></dd></dl><div class="block">
+          attributes: protected 
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#loggerName">
+      <a id="loggerName:String"></a>
       <h4 class="signature">
       <span class="kind">def</span>
       <span class="symbol">
-        <span class="name">name</span>
+        <span class="name">loggerName</span>
         
         
         <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
@@ -734,7 +728,7 @@ possible to check whether the contents of the list are of the requested typed.
             <div class="fullcomment"><div class="comment cmt"><p>Get the name associated with this logger.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the name.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
@@ -852,7 +846,7 @@ possible to check whether the contents of the list are of the requested typed.
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#trace">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#trace">
       <a id="trace(⇒ AnyRef,⇒ Throwable):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -869,14 +863,14 @@ possible to check whether the contents of the list are of the requested typed.
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.</p></dd><dt class="param">t</dt><dd class="cmt"><p>the exception to include with the logged message.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#trace">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#trace">
       <a id="trace(⇒ AnyRef):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -893,7 +887,7 @@ possible to check whether the contents of the list are of the requested typed.
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
@@ -957,7 +951,7 @@ possible to check whether the contents of the list are of the requested typed.
           definition classes: AnyRef
         </div></div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#warn">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#warn">
       <a id="warn(⇒ AnyRef,⇒ Throwable):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -974,14 +968,14 @@ possible to check whether the contents of the list are of the requested typed.
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.</p></dd><dt class="param">t</dt><dd class="cmt"><p>the exception to include with the logged message.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             
             
           </div>
           
-    </li><li visbl="pub" data-isabs="false" name="grizzled.slf4j.Logger#warn">
+    </li><li visbl="prt" data-isabs="false" name="grizzled.slf4j.Logging#warn">
       <a id="warn(⇒ AnyRef):Unit"></a>
       <h4 class="signature">
       <span class="kind">def</span>
@@ -998,7 +992,7 @@ possible to check whether the contents of the list are of the requested typed.
 </p></div><dl class="paramcmts block"><dt class="param">msg</dt><dd class="cmt"><p>the message object. <code>toString()</code> is called to convert it
             to a loggable string.
 </p></dd></dl><div class="block">
-          attributes: final 
+          attributes: protected 
         </div>
             
             

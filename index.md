@@ -31,7 +31,7 @@ information are:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.6`
+* Version: `0.6.2`
 * Type: `jar`
 * Repository: `http://www.scala-tools.org/repo-releases/`
 
@@ -51,7 +51,7 @@ is version-sensitive. For Scala 2.7.7, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.6</version>
+      <version>0.6.2</version>
     </dependency>
 
 For Scala 2.9.0-1, use:
@@ -59,7 +59,7 @@ For Scala 2.9.0-1, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.9.0-1</artifactId>
-      <version>0.6</version>
+      <version>0.6.2</version>
     </dependency>
 
 There are versions of this API for Scala 2.7.7, 2.8.0, 2.8.1, 2.9.0 and 2.9.0-1.
@@ -75,7 +75,7 @@ If you're using [SBT][] 0.7.x to compile your code, you can place the
 following line in your project file (i.e., the Scala file in your
 `project/build/` directory):
 
-    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6"
+    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6.2"
 
 #### 0.10.x
 
@@ -84,7 +84,7 @@ following line in your `build.sbt` file (for Quick Configuration). If
 you're using an SBT 0.10.x Full Configuration, you're obviously smart
 enough to figure out what to do, on your own.
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.2"
 
 ## Building from Source
 
@@ -128,13 +128,13 @@ without incurring any overhead.
 
 For example, the various logging methods are defined as follows:
 
-    def debug(message: => String)
+    @inline final def debug(message: => String)
 
 Thus, `debug()` isn't a method taking a string; instead, it's a method taking
 a function that *returns* a string. Under the covers, `debug()` does what
 you'd expect:
 
-    def debug(message: => String) =
+    @inline final def debug(message: => String) =
         if (debugIsEnabled) log(message)
 
 However, because `message` is a function that returns a string, it isn't
@@ -150,6 +150,10 @@ However, the argument to `debug()` is a function, not a string, so the
 string concatenation and the call to `file.getCanonicalPath` do not happen
 until and unless the `debug()` function determines that debug logging is
 enabled.
+
+Note, too, that the method definitions are annotated with `@inline final`,
+giving the Scala compiler the opportunity to pull them inline, for greater
+efficiency.
 
 Thus, Grizzled SLF4J gives you a simple, Scala-friendly API for SLF4J (with
 no need to use SLF4J format strings), while retaining the performance

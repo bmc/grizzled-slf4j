@@ -3,6 +3,20 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6.2:
+
+* Per a suggestion from Josh Suereth, the `Logging` class's methods are
+  now marked `@inline` and `final`, allowing the Scala compiler to pull them
+  inline, if it can, for greater efficiency.
+
+Version 0.6.1:
+
+* Updated SBT build file so that published Maven POM lists the `slf4j-api`
+  dependency as "provided". This change addresses
+  [Grizzled SLF4J Issue #3][].
+
+[Grizzled SLF4J Issue #3]: https://github.com/bmc/grizzled-slf4j/issues/3
+
 Version 0.6:
 
 * Now builds against Scala 2.9.0-1, as well as Scala 2.9.0, 2.8.1, 2.8.0 and 2.7.7.
