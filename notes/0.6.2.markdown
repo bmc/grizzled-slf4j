@@ -1,0 +1,3 @@
+* Per a suggestion from Josh Suereth, the `Logging` class's methods are
+  now marked `@inline` and `final`, allowing the Scala compiler to pull them
+  inline, if it can, for greater efficiency.

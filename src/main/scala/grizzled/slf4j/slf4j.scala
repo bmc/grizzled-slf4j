@@ -52,12 +52,12 @@ class Logger(val logger: SLF4JLogger)
      *
      * @return the name.
      */
-    def name = logger.getName
+    @inline final def name = logger.getName
 
     /**
      * Determine whether trace logging is enabled.
      */
-    def isTraceEnabled = logger.isTraceEnabled
+    @inline final def isTraceEnabled = logger.isTraceEnabled
 
     /**
      * Issue a trace logging message.
@@ -65,7 +65,7 @@ class Logger(val logger: SLF4JLogger)
      * @param msg  the message object. `toString()` is called to convert it
      *             to a loggable string.
      */
-    def trace(msg: => AnyRef): Unit =
+    @inline final def trace(msg: => AnyRef): Unit =
         if (isTraceEnabled) logger.trace(msg.toString)
 
     /**
@@ -75,13 +75,13 @@ class Logger(val logger: SLF4JLogger)
      *             to a loggable string.
      * @param t    the exception to include with the logged message.
      */
-    def trace(msg: => AnyRef, t: => Throwable): Unit =
+    @inline final def trace(msg: => AnyRef, t: => Throwable): Unit =
         if (isTraceEnabled) logger.trace(msg.toString, t)
 
     /**
      * Determine whether debug logging is enabled.
      */
-    def isDebugEnabled = logger.isDebugEnabled
+    @inline final def isDebugEnabled = logger.isDebugEnabled
 
     /**
      * Issue a debug logging message.
@@ -89,7 +89,7 @@ class Logger(val logger: SLF4JLogger)
      * @param msg  the message object. `toString()` is called to convert it
      *             to a loggable string.
      */
-    def debug(msg: => AnyRef): Unit =
+    @inline final def debug(msg: => AnyRef): Unit =
         if (isDebugEnabled) logger.debug(msg.toString)
 
     /**
@@ -99,13 +99,13 @@ class Logger(val logger: SLF4JLogger)
      *             to a loggable string.
      * @param t    the exception to include with the logged message.
      */
-    def debug(msg: => AnyRef, t: => Throwable): Unit =
+    @inline final def debug(msg: => AnyRef, t: => Throwable): Unit =
         if (isDebugEnabled) logger.debug(msg.toString, t)
 
     /**
      * Determine whether trace logging is enabled.
      */
-    def isErrorEnabled = logger.isErrorEnabled
+    @inline final def isErrorEnabled = logger.isErrorEnabled
 
     /**
      * Issue a trace logging message.
@@ -113,7 +113,7 @@ class Logger(val logger: SLF4JLogger)
      * @param msg  the message object. `toString()` is called to convert it
      *             to a loggable string.
      */
-    def error(msg: => AnyRef): Unit =
+    @inline final def error(msg: => AnyRef): Unit =
         if (isErrorEnabled) logger.error(msg.toString)
 
     /**
@@ -123,13 +123,13 @@ class Logger(val logger: SLF4JLogger)
      *             to a loggable string.
      * @param t    the exception to include with the logged message.
      */
-    def error(msg: => AnyRef, t: => Throwable): Unit =
+    @inline final def error(msg: => AnyRef, t: => Throwable): Unit =
         if (isErrorEnabled) logger.error(msg.toString, t)
 
     /**
      * Determine whether trace logging is enabled.
      */
-    def isInfoEnabled = logger.isInfoEnabled
+    @inline final def isInfoEnabled = logger.isInfoEnabled
 
     /**
      * Issue a trace logging message.
@@ -137,7 +137,7 @@ class Logger(val logger: SLF4JLogger)
      * @param msg  the message object. `toString()` is called to convert it
      *             to a loggable string.
      */
-    def info(msg: => AnyRef): Unit =
+    @inline final def info(msg: => AnyRef): Unit =
         if (isInfoEnabled) logger.info(msg.toString)
 
     /**
@@ -147,13 +147,13 @@ class Logger(val logger: SLF4JLogger)
      *             to a loggable string.
      * @param t    the exception to include with the logged message.
      */
-    def info(msg: => AnyRef, t: => Throwable): Unit =
+    @inline final def info(msg: => AnyRef, t: => Throwable): Unit =
         if (isInfoEnabled) logger.info(msg.toString, t)
 
     /**
      * Determine whether trace logging is enabled.
      */
-    def isWarnEnabled = logger.isWarnEnabled
+    @inline final def isWarnEnabled = logger.isWarnEnabled
 
     /**
      * Issue a trace logging message.
@@ -161,7 +161,7 @@ class Logger(val logger: SLF4JLogger)
      * @param msg  the message object. `toString()` is called to convert it
      *             to a loggable string.
      */
-    def warn(msg: => AnyRef): Unit =
+    @inline final def warn(msg: => AnyRef): Unit =
         if (isWarnEnabled) logger.warn(msg.toString)
 
     /**
@@ -171,7 +171,7 @@ class Logger(val logger: SLF4JLogger)
      *             to a loggable string.
      * @param t    the exception to include with the logged message.
      */
-    def warn(msg: => AnyRef, t: => Throwable): Unit =
+    @inline final def warn(msg: => AnyRef, t: => Throwable): Unit =
         if (isWarnEnabled) logger.warn(msg.toString, t)
 }
 

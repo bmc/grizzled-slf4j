@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "0.6.1"
+version := "0.6.2"
 
 scalaVersion := "2.8.1"
 
