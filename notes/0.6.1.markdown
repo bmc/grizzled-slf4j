@@ -1,0 +1,5 @@
+* Updated SBT build file so that published Maven POM lists the `slf4j-api`
+  dependency as "provided". This change addresses
+  [Grizzled SLF4J Issue #3][].
+
+[Grizzled SLF4J Issue #3]: https://github.com/bmc/grizzled-slf4j/issues/3
