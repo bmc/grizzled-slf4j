@@ -75,7 +75,7 @@ If you're using [SBT][] 0.7.x to compile your code, you can place the
 following line in your project file (i.e., the Scala file in your
 `project/build/` directory):
 
-    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j % "0.6"
+    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6"
 
 #### 0.10.x
 
@@ -84,7 +84,7 @@ following line in your `build.sbt` file (for Quick Configuration). If
 you're using an SBT 0.10.x Full Configuration, you're obviously smart
 enough to figure out what to do, on your own.
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j % "0.6"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6"
 
 ## Building from Source
 
