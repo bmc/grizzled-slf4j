@@ -3,6 +3,20 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6.3:
+
+Addressed [Issue #5][] via a patch provided by [Lucas Torri][]. Specifically,
+the `Logger` object now supports this method:
+
+    def apply[T](implicit m: Manifest[T]): Logger = apply(m.erasure)
+
+Allowing this syntax:
+
+    val logger = Logger[MyClass]
+
+[Lucas Torri]: https://github.com/lucastorri
+[Issue #5]: https://github.com/bmc/grizzled-slf4j/issues/5
+
 Version 0.6.2:
 
 * Per a suggestion from Josh Suereth, the `Logging` class's methods are
