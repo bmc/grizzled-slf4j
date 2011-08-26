@@ -23,7 +23,7 @@ scalaVersion := "2.8.1"
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
-crossScalaVersions := Seq("2.9.0-1", "2.9.0", "2.8.1", "2.8.0", "2.7.7")
+crossScalaVersions := Seq("2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
 
 // ---------------------------------------------------------------------------
 // Posterous-SBT
