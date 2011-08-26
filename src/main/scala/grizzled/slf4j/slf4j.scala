@@ -352,6 +352,14 @@ object Logger
     def apply(cls: Class[_]): Logger = apply(cls.getName)
 
     /**
+     * Get the logger for the specified class type, using the class's fully
+     * qualified name as the logger name.
+     *
+     * @return the `Logger`.
+     */
+    def apply[C](implicit m: Manifest[C]): Logger = apply(m.erasure.getName)
+
+    /**
      * Get the root logger.
      *
      * @return the root logger
