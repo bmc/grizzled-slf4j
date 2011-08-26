@@ -14,6 +14,9 @@ Allowing this syntax:
 
     val logger = Logger[MyClass]
 
+**Note**: As a result of this change, Grizzled SLF4J no longer supports
+Scala 2.7.
+
 [Lucas Torri]: https://github.com/lucastorri
 [Issue #5]: https://github.com/bmc/grizzled-slf4j/issues/5
 
