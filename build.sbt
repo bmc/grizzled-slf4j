@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "0.6.3"
+version := "0.6.5"
 
 scalaVersion := "2.8.1"
 
@@ -46,7 +46,7 @@ libraryDependencies <<= (sbtVersion, scalaVersion, libraryDependencies) { (sbtv,
 // Set the "scope" on dependencies to "provided", indicating that the user
 // is responsible for providing those dependencies. This prevents someone
 // else's Maven from sucking those jars into any WAR files it creates.
-libraryDependencies += "org.slf4j" % "slf4j-api" % "1.6.1" % "provided"
+libraryDependencies += "org.slf4j" % "slf4j-api" % "1.6.2" % "provided"
 
 // ---------------------------------------------------------------------------
 // Publishing criteria
