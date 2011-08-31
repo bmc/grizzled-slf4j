@@ -3,6 +3,16 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6.4:
+
+* Upgraded to version 1.6.2 of [SLF4J][].
+* Converted code to confirm with standard Scala coding style.
+* Backed out change made in version 0.6.1: Published Maven POM now lists
+  `slf4j-api` as "compiled" again, instead of "provided". See comments
+  in [Grizzled SLF4J Issue #3][].
+
+[SLF4J]: http://slf4j.org/
+
 Version 0.6.3:
 
 Addressed [Issue #5][] via a patch provided by [Lucas Torri][]. Specifically,
