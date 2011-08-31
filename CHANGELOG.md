@@ -3,6 +3,12 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6.5:
+
+* Now builds for [Scala][] 2.9.1, as well as 2.9.0-1, 2.9.0, 2.8.1, and 2.8.0.
+
+[Scala]: http://www.scala-lang.org/
+
 Version 0.6.4:
 
 * Upgraded to version 1.6.2 of [SLF4J][].
