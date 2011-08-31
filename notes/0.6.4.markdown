@@ -1,4 +1,8 @@
-* Upgraded to version 1.6.4 of [SLF4J][].
+* Upgraded to version 1.6.2 of [SLF4J][].
 * Converted code to confirm with standard Scala coding style.
+* Backed out change made in version 0.6.1: Published Maven POM now lists
+  `slf4j-api` as "compiled" again, instead of "provided". See comments
+  in [Grizzled SLF4J Issue #3][].
 
 [SLF4J]: http://slf4j.org/
+[Grizzled SLF4J Issue #3]: https://github.com/bmc/grizzled-slf4j/issues/3
