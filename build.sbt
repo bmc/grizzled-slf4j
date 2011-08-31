@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "0.6.4"
+version := "0.6.5"
 
 scalaVersion := "2.8.1"
 
@@ -23,7 +23,7 @@ scalaVersion := "2.8.1"
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
-crossScalaVersions := Seq("2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
+crossScalaVersions := Seq("2.9.1", "2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
 
 // ---------------------------------------------------------------------------
 // Posterous-SBT
