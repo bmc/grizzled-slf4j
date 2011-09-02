@@ -59,8 +59,8 @@ class Logger(val logger: SLF4JLogger) {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  @inline final def trace(msg: => AnyRef): Unit =
-    if (isTraceEnabled) logger.trace(msg.toString)
+  @inline final def trace(msg: => Any): Unit =
+    if (isTraceEnabled) logger.trace(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -68,8 +68,8 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  @inline final def trace(msg: => AnyRef, t: => Throwable): Unit =
-    if (isTraceEnabled) logger.trace(msg.toString, t)
+  @inline final def trace(msg: => Any, t: => Throwable): Unit =
+    if (isTraceEnabled) logger.trace(msg, t)
 
   /** Determine whether debug logging is enabled.
     */
@@ -80,8 +80,8 @@ class Logger(val logger: SLF4JLogger) {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  @inline final def debug(msg: => AnyRef): Unit =
-    if (isDebugEnabled) logger.debug(msg.toString)
+  @inline final def debug(msg: => Any): Unit =
+    if (isDebugEnabled) logger.debug(msg)
 
   /** Issue a debug logging message, with an exception.
     *
@@ -89,8 +89,8 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  @inline final def debug(msg: => AnyRef, t: => Throwable): Unit =
-    if (isDebugEnabled) logger.debug(msg.toString, t)
+  @inline final def debug(msg: => Any, t: => Throwable): Unit =
+    if (isDebugEnabled) logger.debug(msg, t)
 
   /** Determine whether trace logging is enabled.
     */
@@ -101,8 +101,8 @@ class Logger(val logger: SLF4JLogger) {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  @inline final def error(msg: => AnyRef): Unit =
-    if (isErrorEnabled) logger.error(msg.toString)
+  @inline final def error(msg: => Any): Unit =
+    if (isErrorEnabled) logger.error(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -110,8 +110,8 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  @inline final def error(msg: => AnyRef, t: => Throwable): Unit =
-    if (isErrorEnabled) logger.error(msg.toString, t)
+  @inline final def error(msg: => Any, t: => Throwable): Unit =
+    if (isErrorEnabled) logger.error(msg, t)
 
   /** Determine whether trace logging is enabled.
     */
@@ -122,8 +122,8 @@ class Logger(val logger: SLF4JLogger) {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  @inline final def info(msg: => AnyRef): Unit =
-    if (isInfoEnabled) logger.info(msg.toString)
+  @inline final def info(msg: => Any): Unit =
+    if (isInfoEnabled) logger.info(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -131,8 +131,8 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  @inline final def info(msg: => AnyRef, t: => Throwable): Unit =
-    if (isInfoEnabled) logger.info(msg.toString, t)
+  @inline final def info(msg: => Any, t: => Throwable): Unit =
+    if (isInfoEnabled) logger.info(msg, t)
 
   /** Determine whether trace logging is enabled.
     */
@@ -143,8 +143,8 @@ class Logger(val logger: SLF4JLogger) {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  @inline final def warn(msg: => AnyRef): Unit =
-    if (isWarnEnabled) logger.warn(msg.toString)
+  @inline final def warn(msg: => Any): Unit =
+    if (isWarnEnabled) logger.warn(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -152,8 +152,14 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  @inline final def warn(msg: => AnyRef, t: => Throwable): Unit =
-    if (isWarnEnabled) logger.warn(msg.toString, t)
+  @inline final def warn(msg: => Any, t: => Throwable): Unit =
+    if (isWarnEnabled) logger.warn(msg, t)
+
+  private implicit def _any2String(msg: Any): String =
+    msg match {
+      case null => "null"
+      case _    => msg.toString
+    }
 }
 
 /** Mix the `Logging` trait into a class to get:
@@ -190,7 +196,7 @@ trait Logging {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  protected def trace(msg: => AnyRef): Unit = logger.trace(msg)
+  protected def trace(msg: => Any): Unit = logger.trace(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -198,7 +204,7 @@ trait Logging {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  protected def trace(msg: => AnyRef, t: => Throwable): Unit =
+  protected def trace(msg: => Any, t: => Throwable): Unit =
     logger.trace(msg, t)
 
   /** Determine whether debug logging is enabled.
@@ -210,7 +216,7 @@ trait Logging {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  protected def debug(msg: => AnyRef): Unit = logger.debug(msg)
+  protected def debug(msg: => Any): Unit = logger.debug(msg)
 
   /** Issue a debug logging message, with an exception.
     *
@@ -218,7 +224,7 @@ trait Logging {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  protected def debug(msg: => AnyRef, t: => Throwable): Unit =
+  protected def debug(msg: => Any, t: => Throwable): Unit =
     logger.debug(msg, t)
 
   /** Determine whether trace logging is enabled.
@@ -230,7 +236,7 @@ trait Logging {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  protected def error(msg: => AnyRef): Unit = logger.error(msg)
+  protected def error(msg: => Any): Unit = logger.error(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -238,7 +244,7 @@ trait Logging {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  protected def error(msg: => AnyRef, t: => Throwable): Unit =
+  protected def error(msg: => Any, t: => Throwable): Unit =
     logger.error(msg, t)
 
   /** Determine whether trace logging is enabled.
@@ -250,7 +256,7 @@ trait Logging {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  protected def info(msg: => AnyRef): Unit = logger.info(msg)
+  protected def info(msg: => Any): Unit = logger.info(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -258,7 +264,7 @@ trait Logging {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  protected def info(msg: => AnyRef, t: => Throwable): Unit =
+  protected def info(msg: => Any, t: => Throwable): Unit =
     logger.info(msg, t)
 
   /** Determine whether trace logging is enabled.
@@ -270,7 +276,7 @@ trait Logging {
     * @param msg  the message object. `toString()` is called to convert it
     *             to a loggable string.
     */
-  protected def warn(msg: => AnyRef): Unit = logger.warn(msg)
+  protected def warn(msg: => Any): Unit = logger.warn(msg)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -278,7 +284,7 @@ trait Logging {
     *             to a loggable string.
     * @param t    the exception to include with the logged message.
     */
-  protected def warn(msg: => AnyRef, t: => Throwable): Unit =
+  protected def warn(msg: => Any, t: => Throwable): Unit =
     logger.warn(msg, t)
 }
 
