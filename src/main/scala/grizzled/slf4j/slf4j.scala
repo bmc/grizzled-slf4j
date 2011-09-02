@@ -155,6 +155,13 @@ class Logger(val logger: SLF4JLogger) {
   @inline final def warn(msg: => Any, t: => Throwable): Unit =
     if (isWarnEnabled) logger.warn(msg, t)
 
+  /** Converts any type to a String. In case the object is null, a null 
+    * String is returned. Otherwise the method `toString()` is called.
+    *
+    * @param msg  the message object to be converted to String
+    *
+    * @return the String representation of the message.
+    */
   private implicit def _any2String(msg: Any): String =
     msg match {
       case null => "null"
