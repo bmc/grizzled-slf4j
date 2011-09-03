@@ -1,3 +1,5 @@
-* Pulled change from Lucas Torri that changes logging method signatures
+* Pulled change from [Lucas Torri][] that changes logging method signatures
   to take `Any`, rather than `AnyRef`, allowing more parameter flexibility.
   Also handles `null` better.
+  
+  [Lucas Torri]: https://github.com/lucastorri
