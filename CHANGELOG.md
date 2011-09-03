@@ -3,6 +3,14 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6.6:
+
+* Pulled change from [Lucas Torri][] that changes logging method signatures
+  to take `Any`, rather than `AnyRef`, allowing more parameter flexibility.
+  Also handles `null` better.
+  
+  [Lucas Torri]: https://github.com/lucastorri
+
 Version 0.6.5:
 
 * Now builds for [Scala][] 2.9.1, as well as 2.9.0-1, 2.9.0, 2.8.1, and 2.8.0.

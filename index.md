@@ -31,7 +31,7 @@ information are:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.6.5`
+* Version: `0.6.6`
 * Type: `jar`
 * Repository: `http://www.scala-tools.org/repo-releases/`
 
@@ -51,7 +51,7 @@ is version-sensitive. For Scala 2.7.7, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.6.5</version>
+      <version>0.6.6</version>
     </dependency>
 
 For Scala 2.9.0-1, use:
@@ -59,11 +59,11 @@ For Scala 2.9.0-1, use:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.9.0-1</artifactId>
-      <version>0.6.5</version>
+      <version>0.6.6</version>
     </dependency>
 
-There are versions of this API for Scala, 2.8.0, 2.8.1, 2.9.0, 2.9.0-1 and
-2.9.1.
+Grizzled SLF4J is cross-compiled for Scala 2.9.1, 2.9.0-1, 2.9.0, 2.8.1 and
+2.8.0.
 
 For more information on using Maven and Scala, see Josh Suereth's
 [Scala Maven Guide][].
@@ -76,7 +76,7 @@ If you're using [SBT][] 0.7.x to compile your code, you can place the
 following line in your project file (i.e., the Scala file in your
 `project/build/` directory):
 
-    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6.5"
+    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6.6"
 
 #### 0.10.x
 
@@ -85,7 +85,7 @@ following line in your `build.sbt` file (for Quick Configuration). If
 you're using an SBT 0.10.x Full Configuration, you're obviously smart
 enough to figure out what to do, on your own.
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.5"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.6"
 
 ## Building from Source
 
