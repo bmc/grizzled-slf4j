@@ -204,6 +204,9 @@ can mix the `Logging` trait into any class, which automatically:
 This approach is similar to the `Logging` trait in the [Scalate][] source.
 (See Scalate's [Logging.scala][scalate-logging].)
 
+[Scalate]: http://scalate.fusesource.org/
+[scalate-logging]: https://github.com/scalate/scalate/blob/master/scalate-util/src/main/scala/org/fusesource/scalate/util/Logging.scala
+
 Example:
 
     class Foo extends Logging {
