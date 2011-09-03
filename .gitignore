@@ -7,3 +7,6 @@ project/plugins/project
 project/plugins/src_managed
 project/plugins/target
 target
+src/testproject/project/boot/
+src/testproject/project/target/
+src/testproject/target/

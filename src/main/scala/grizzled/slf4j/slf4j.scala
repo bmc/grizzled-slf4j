@@ -164,7 +164,7 @@ class Logger(val logger: SLF4JLogger) {
     */
   private implicit def _any2String(msg: Any): String =
     msg match {
-      case null => "null"
+      case null => "<null>"
       case _    => msg.toString
     }
 }

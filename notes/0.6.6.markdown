@@ -1,0 +1,3 @@
+* Pulled change from Lucas Torri that changes logging method signatures
+  to take `Any`, rather than `AnyRef`, allowing more parameter flexibility.
+  Also handles `null` better.
