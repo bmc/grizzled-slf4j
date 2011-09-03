@@ -162,12 +162,32 @@ benefits of delayed evaluation.
 
 ### Getting a Logger
 
-To get a logger, use the `Logger` object and pass it a name or a class.
-(By convention, the name should be a class name.)
+To get a logger, use the `Logger` object and pass it a name, a class, or a
+type. (By convention, a name should be a class name.) Examples:
+
+**Using a name:**
 
     import grizzled.slf4j.Logger
 
-    val logger = Logger("org.example.foo")
+    class Foo {
+      val logger = Logger("org.example.foo")
+    }
+
+**Using a class:**
+
+    import grizzled.slf4j.Logger
+
+    class Foo {
+      val logger = Logger(classOf[Foo])
+    }
+**Using a type:**
+
+    import grizzled.slf4j.Logger
+
+    class Foo {
+      val logger = Logger[this.type] // or Logger[Foo]
+    }
+
 
 ### Mixing in the Logging Trait
 
