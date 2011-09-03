@@ -37,7 +37,6 @@ information are:
 
 Your `<repositories>` section will need to contain the Scala Tools repo:
 
-    {% highlight xml %}
     <repositories>
       <repository>
         <id>scala-tools.org</id>
@@ -45,28 +44,23 @@ Your `<repositories>` section will need to contain the Scala Tools repo:
           <url>http://scala-tools.org/repo-releases</url>
       </repository>
     </repositories>
-    {% endhighlight %}
 
 Then, you must specify the appropriate Grizzled SLF4J dependency, which
 is version-sensitive. For Scala 2.7.7, use:
 
-    {% highlight xml %}
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.7.7</artifactId>
       <version>0.6.6</version>
     </dependency>
-    {% endhighlight %}
 
 For Scala 2.9.0-1, use:
 
-    {% highlight xml %}
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.9.0-1</artifactId>
       <version>0.6.6</version>
     </dependency>
-    {% endhighlight %}
 
 Grizzled SLF4J is cross-compiled for Scala 2.9.1, 2.9.0-1, 2.9.0, 2.8.1 and
 2.8.0.
@@ -135,18 +129,14 @@ without incurring any overhead.
 
 For example, the various logging methods are defined as follows:
 
-    {% highlight scala %}
     @inline final def debug(message: => Any)
-    {% endhighlight %}
 
 Thus, `debug()` isn't a method taking a string; instead, it's a method taking
 a function that *returns* a string. Under the covers, `debug()` does what
 you'd expect:
 
-    {% highlight scala %}
     @inline final def debug(message: => Any) =
         if (debugIsEnabled) log(message)
-    {% endhighlight %}
 
 However, because `message` is a function that returns a string, it isn't
 evaluated until it is called--which is *after* the test that determines
@@ -155,9 +145,7 @@ whether it *should* be logged.
 Because of Scala's rich syntactic sugar, you can still call `debug()` in
 a straightforward way:
 
-    {% highlight scala %}
     log.debug("Failed to open file \"" + file.getCanonicalPath + "\"")
-    {% endhighlight %}
 
 However, the argument to `debug()` is a function, not a string, so the
 string concatenation and the call to `file.getCanonicalPath` do not happen
@@ -177,11 +165,9 @@ benefits of delayed evaluation.
 To get a logger, use the `Logger` object and pass it a name or a class.
 (By convention, the name should be a class name.)
 
-    {% highlight scala %}
     import grizzled.slf4j.Logger
 
     val logger = Logger("org.example.foo")
-    {% endhighlight %}
 
 ### Mixing in the Logging Trait
 
@@ -200,18 +186,15 @@ This approach is similar to the `Logging` trait in the [Scalate][] source.
 
 Example:
 
-    {% highlight scala %}
     class Foo extends Logging {
       def test: Unit =
         info("test")
     }
-    {% endhighlight %}
 
 ### Logging messages
 
 The `Logger` class supports the following methods:
 
-    {% highlight scala %}
     def debug(msg => Any, t: => Throwable): Unit
     def debug(msg => Any, t: => Throwable): Unit
     def isDebugEnabled: Boolean
@@ -231,7 +214,6 @@ The `Logger` class supports the following methods:
     warn(msg => Any, t: => Throwable)
     warn(msg => Any, t: => Throwable)
     def isWarnEnabled: Boolean
-    {% endhighlight %}
 
 See the [API documentation][] for complete details.
 
