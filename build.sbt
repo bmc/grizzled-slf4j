@@ -16,14 +16,14 @@ organization := "org.clapper"
 
 version := "0.6.6"
 
-scalaVersion := "2.8.1"
+scalaVersion := "2.8.2"
 
 // ---------------------------------------------------------------------------
 // Additional compiler options and plugins
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
-crossScalaVersions := Seq("2.9.1", "2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
+crossScalaVersions := Seq("2.9.1", "2.9.0-1", "2.9.0", "2.8.2", "2.8.1", "2.8.0")
 
 // ---------------------------------------------------------------------------
 // ScalaTest dependendency
@@ -32,6 +32,7 @@ libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
     // Select ScalaTest version based on Scala version
     val scalatestVersionMap = Map("2.8.0"   -> ("scalatest", "1.3"),
                                   "2.8.1"   -> ("scalatest_2.8.1", "1.5.1"),
+                                  "2.8.2"   -> ("scalatest_2.8.2", "1.5.1"),
                                   "2.9.0"   -> ("scalatest_2.9.0", "1.6.1"),
                                   "2.9.0-1" -> ("scalatest_2.9.0-1", "1.6.1"),
                                   "2.9.1"   -> ("scalatest_2.9.0-1", "1.6.1"))
