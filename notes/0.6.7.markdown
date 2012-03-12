@@ -1,0 +1,6 @@
+* Converted to build with SBT 0.11.2.
+* Added support for `ls.implicit.ly` metadata.
+* Now publishes to `oss.sonatype.org` (and, thence, to the Maven central repo).
+* Bumped [SLF4J][] version dependency to SLF4J 1.6.4.
+
+[SLF4J]: http://slf4j.org
