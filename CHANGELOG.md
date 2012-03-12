@@ -3,6 +3,13 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6.7:
+
+* Converted to build with SBT 0.11.2.
+* Added support for `ls.implicit.ly` metadata.
+* Now publishes to `oss.sonatype.org` (and, thence, to the Maven central repo).
+* Bumped [SLF4J][] version dependency to SLF4J 1.6.4.
+
 Version 0.6.6:
 
 * Pulled change from [Lucas Torri][] that changes logging method signatures

@@ -11,59 +11,29 @@ under a BSD license.
 
 ## Installation
 
-The easiest way to install the Grizzled SLF4J library is to download a
-pre-compiled jar from the [Scala Tools Maven repository][]. However, you
-can also get certain build tools to download it for you automatically.
-
-### First step: What version of Scala are you using?
-
-Grizzled SLF4J is compiled against Scala 2.7.7 and Scala 2.8.0, via [SBT][]
-(the Simple Build Tool), and published to the
-[Scala Tools Maven repository][]. The Scala version is embedded in the name
-of published artifact, because that's how [SBT][] handles cross-version
-compilation. (See the [SBT cross-building][] page for details.)
+Grizzled SLF4J is compiled against Scala 2.8.0 through 2.9.1 and published to
+the `oss.sonatype.org` repository;  Sonatype automatically pushes the artifacts
+to the  [Maven central repository][]. You can get download the Grizzled Scala
+library jar directly from the Maven repository. However, if you're using
+[Maven][] or [SBT][], you can just have those tools do the job for you.
 
 ### Installing with Maven
 
-If you're using [Maven][], you can simply tell Maven to get Grizzled SLF4J
-from the [Scala Tools Maven repository][]. The relevant pieces of
-information are:
+If you're using [Maven][], just specify the artifact, and Maven will do the
+rest for you:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.6.6`
+* Version: `0.6.7`
 * Type: `jar`
-* Repository: `http://www.scala-tools.org/repo-releases/`
 
-Your `<repositories>` section will need to contain the Scala Tools repo:
-
-    <repositories>
-      <repository>
-        <id>scala-tools.org</id>
-          <name>Scala-tools Maven2 Repository</name>
-          <url>http://scala-tools.org/repo-releases</url>
-      </repository>
-    </repositories>
-
-Then, you must specify the appropriate Grizzled SLF4J dependency, which
-is version-sensitive. For Scala 2.7.7, use:
+For example:
 
     <dependency>
       <groupId>org.clapper</groupId>
-      <artifactId>grizzled-slf4j_2.7.7</artifactId>
-      <version>0.6.6</version>
+      <artifactId>grizzled-slf4j_2.9.1</artifactId>
+      <version>0.6.7</version>
     </dependency>
-
-For Scala 2.9.0-1, use:
-
-    <dependency>
-      <groupId>org.clapper</groupId>
-      <artifactId>grizzled-slf4j_2.9.0-1</artifactId>
-      <version>0.6.6</version>
-    </dependency>
-
-Grizzled SLF4J is cross-compiled for Scala 2.9.1, 2.9.0-1, 2.9.0, 2.8.1 and
-2.8.0.
 
 For more information on using Maven and Scala, see Josh Suereth's
 [Scala Maven Guide][].
@@ -76,16 +46,22 @@ If you're using [SBT][] 0.7.x to compile your code, you can place the
 following line in your project file (i.e., the Scala file in your
 `project/build/` directory):
 
-    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6.6"
+    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6.7"
 
-#### 0.10.x
+#### 0.11.x
 
-If you're using [SBT][] 0.10.x to compile your code, you can use the
+If you're using [SBT][] 0.11.x to compile your code, you can use the
 following line in your `build.sbt` file (for Quick Configuration). If
-you're using an SBT 0.10.x Full Configuration, you're obviously smart
+you're using an SBT 0.11.x Full Configuration, you're obviously smart
 enough to figure out what to do, on your own.
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.6"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.7"
+
+Grizzled SLF4J is also registered with [Doug Tangren][]'s excellent
+[ls.implicit.ly][] catalog. If you use the `ls` SBT plugin, you can install
+Grizzled SLF4J with
+
+    sbt> ls-install grizzled-slf4j
 
 ## Building from Source
 
@@ -276,7 +252,7 @@ request. Along with any patch you send:
 [GitHub repository]: http://github.com/bmc/grizzled-slf4j
 [GitHub]: http://github.com/bmc/
 [downloads page]: http://github.com/bmc/grizzled-slf4j/downloads
-[Scala Tools Maven repository]: http://www.scala-tools.org/repo-releases/
+[Maven central repository]: http://search.maven.org/
 [Scala Maven Guide]: http://www.scala-lang.org/node/345
 [Maven]: http://maven.apache.org/
 [SBT]: http://code.google.com/p/simple-build-tool
