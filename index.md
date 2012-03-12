@@ -262,3 +262,4 @@ request. Along with any patch you send:
 [call-by-name]: http://eed3si9n.com/scala-and-evaluation-strategy
 [SBT cross-building]: http://code.google.com/p/simple-build-tool/wiki/CrossBuild
 [changelog]: CHANGELOG.html
+[ls.implicit.ly]: http://ls.implicit.ly
