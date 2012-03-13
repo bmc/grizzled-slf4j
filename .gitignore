@@ -10,3 +10,4 @@ target
 src/testproject/project/boot/
 src/testproject/project/target/
 src/testproject/target/
+*.sublime-*
