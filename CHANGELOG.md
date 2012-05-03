@@ -3,6 +3,10 @@ title: Change log for Grizzled SLF4J
 layout: default
 ---
 
+Version 0.6.9:
+
+* Added Scala 2.9.2 to list of cross-compiled targets.
+
 Version 0.6.8:
 
 * Added Scala 2.9.1-1 to list of cross-compiled targets.
