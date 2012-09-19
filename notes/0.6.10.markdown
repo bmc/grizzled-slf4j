@@ -1,0 +1,4 @@
+* Upgraded to SLF4J 2.7.1.
+* Moved `ls` SBT plugin specification into the project (instead of relying
+  on global configuration), so it's easier for someone else to build the
+  project without having to set up external dependencies.

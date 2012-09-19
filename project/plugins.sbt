@@ -1,10 +1,5 @@
-// ---------------------------------------------------------------------------
-// Posterous-SBT
+resolvers ++= Seq(
+  "less is" at "http://repo.lessis.me",
+  "coda" at "http://repo.codahale.com")
 
-// Only supported for 2.8.1 right now.
-libraryDependencies <<= (sbtVersion, scalaVersion, libraryDependencies) { (sbtv, scalav, deps) =>
-    if (scalav == "2.8.1")
-        deps :+ "net.databinder" %% "posterous-sbt" % ("0.3.0_sbt" + sbtv)
-    else
-        deps
-}
+addSbtPlugin("me.lessis" % "ls-sbt" % "0.1.2")

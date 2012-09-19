@@ -60,7 +60,7 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     */
   @inline final def trace(msg: => Any): Unit =
-    if (isTraceEnabled) logger.trace(msg)
+    if (isTraceEnabled) logger.trace(msg.toString)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -81,7 +81,7 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     */
   @inline final def debug(msg: => Any): Unit =
-    if (isDebugEnabled) logger.debug(msg)
+    if (isDebugEnabled) logger.debug(msg.toString)
 
   /** Issue a debug logging message, with an exception.
     *
@@ -102,7 +102,7 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     */
   @inline final def error(msg: => Any): Unit =
-    if (isErrorEnabled) logger.error(msg)
+    if (isErrorEnabled) logger.error(msg.toString)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -123,7 +123,7 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     */
   @inline final def info(msg: => Any): Unit =
-    if (isInfoEnabled) logger.info(msg)
+    if (isInfoEnabled) logger.info(msg.toString)
 
   /** Issue a trace logging message, with an exception.
     *
@@ -144,7 +144,7 @@ class Logger(val logger: SLF4JLogger) {
     *             to a loggable string.
     */
   @inline final def warn(msg: => Any): Unit =
-    if (isWarnEnabled) logger.warn(msg)
+    if (isWarnEnabled) logger.warn(msg.toString)
 
   /** Issue a trace logging message, with an exception.
     *

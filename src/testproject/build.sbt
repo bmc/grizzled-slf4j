@@ -22,7 +22,7 @@ scalacOptions ++= Seq("-deprecation", "-unchecked")
 // Other dependendencies
 
 libraryDependencies ++= Seq(
-  "org.slf4j" % "slf4j-api" % "1.6.2",
-  "org.clapper" %% "avsl" % "0.3.5",
-  "org.clapper" %% "grizzled-slf4j" % "0.6.6"
+  "org.slf4j" % "slf4j-api" % "1.7.1",
+  "org.clapper" %% "avsl" % "0.4",
+  "org.clapper" %% "grizzled-slf4j" % "0.6.10"
 )

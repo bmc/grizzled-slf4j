@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "0.6.9"
+version := "0.6.10"
 
 licenses := Seq("BSD" -> url("http://software.clapper.org/grizzled-slf4j/license.html"))
 
@@ -46,14 +46,16 @@ seq(lsSettings :_*)
 
 libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
     // Select ScalaTest version based on Scala version
-    val scalatestVersionMap = Map("2.8.0"   -> ("scalatest_2.8.0", "1.3.1.RC2"),
-                                  "2.8.1"   -> ("scalatest_2.8.1", "1.7.1"),
-                                  "2.8.2"   -> ("scalatest_2.8.2", "1.7.1"),
-                                  "2.9.0"   -> ("scalatest_2.9.0", "1.7.1"),
-                                  "2.9.0-1" -> ("scalatest_2.9.0-1", "1.7.1"),
-                                  "2.9.1"   -> ("scalatest_2.9.1", "1.7.1"),
-                                  "2.9.1-1"   -> ("scalatest_2.9.1", "1.7.1"),
-                                  "2.9.2"   -> ("scalatest_2.9.1", "1.7.1"))
+    val scalatestVersionMap = Map(
+      "2.8.0"     -> ("scalatest_2.8.0", "1.3.1.RC2"),
+      "2.8.1"     -> ("scalatest_2.8.1", "1.7.1"),
+      "2.8.2"     -> ("scalatest_2.8.2", "1.7.1"),
+      "2.9.0"     -> ("scalatest_2.9.0", "1.7.1"),
+      "2.9.0-1"   -> ("scalatest_2.9.0-1", "1.7.1"),
+      "2.9.1"     -> ("scalatest_2.9.1", "1.7.1"),
+      "2.9.1-1"   -> ("scalatest_2.9.1", "1.7.1"),
+      "2.9.2"     -> ("scalatest_2.9.1", "1.7.1")
+    )
     val (scalatestArtifact, scalatestVersion) = scalatestVersionMap.getOrElse(
         sv, error("Unsupported Scala version: " + scalaVersion)
     )
@@ -64,7 +66,7 @@ libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
 // Other dependendencies
 
 libraryDependencies ++= Seq(
-  "org.slf4j" % "slf4j-api" % "1.6.4"
+  "org.slf4j" % "slf4j-api" % "1.7.1"
 )
 
 // ---------------------------------------------------------------------------
