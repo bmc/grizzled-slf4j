@@ -27,7 +27,7 @@ scalaVersion := "2.9.1"
 // ---------------------------------------------------------------------------
 // Additional compiler options and plugins
 
-scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
+scalacOptions ++= Seq("-deprecation", "-unchecked")
 
 crossScalaVersions := Seq(
   "2.10.0-M7",
