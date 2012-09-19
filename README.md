@@ -1,6 +1,9 @@
 Grizzled-SLF4J: A simple, Scala-friendly front-end to [SLF4J][].
 ================================================================
 
+**NOTE**: This branch supports Scala 2.9.x and earlier. Scala 2.10 is
+on the trunk.
+
 The [Grizzled SLF4J][grizzled-slf4j] package provides a very thin
 Scala-friendly layer on top of the [SLF4J][] (Simple Logging Façade for
 Java) API. It is released under a BSD license. Please see the
@@ -9,4 +12,4 @@ Java) API. It is released under a BSD license. Please see the
 [grizzled-slf4j]: http://software.clapper.org/grizzled-slf4j/
 [SLF4J]: http://slf4j.org/
 ---
-Copyright &copy; 2010-2011 Brian M. Clapper, <i>bmc@clapper.org</i>
+Copyright &copy; 2010-2012 Brian M. Clapper, <i>bmc@clapper.org</i>
