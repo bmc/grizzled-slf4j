@@ -27,9 +27,10 @@ scalaVersion := "2.9.1"
 // ---------------------------------------------------------------------------
 // Additional compiler options and plugins
 
-scalacOptions ++= Seq("-deprecation", "-unchecked")
+scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 crossScalaVersions := Seq(
+  "2.10.0-M7",
   "2.9.2", "2.9.1-1", "2.9.1", "2.9.0-1", "2.9.0", "2.8.2", "2.8.1", "2.8.0"
 )
 
@@ -54,7 +55,8 @@ libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
       "2.9.0-1"   -> ("scalatest_2.9.0-1", "1.7.1"),
       "2.9.1"     -> ("scalatest_2.9.1", "1.7.1"),
       "2.9.1-1"   -> ("scalatest_2.9.1", "1.7.1"),
-      "2.9.2"     -> ("scalatest_2.9.1", "1.7.1")
+      "2.9.2"     -> ("scalatest_2.9.1", "1.7.1"),
+      "2.10.0-M7" -> ("scalatest_2.10.0-M7", "1.9-2.10.0-M7-B1")
     )
     val (scalatestArtifact, scalatestVersion) = scalatestVersionMap.getOrElse(
         sv, error("Unsupported Scala version: " + scalaVersion)
