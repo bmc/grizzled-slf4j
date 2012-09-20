@@ -17,8 +17,9 @@ to the  [Maven central repository][]. You can get download the Grizzled Scala
 library jar directly from the Maven repository. However, if you're using
 [Maven][] or [SBT][], you can just have those tools do the job for you.
 
-Version 0.6.9 supports Scala 2.9.2, 2.9.1-1, 2.9.1, 2.9.0-1, 2.9.0, 2.8.2,
-2.8.1 and 2.8.0.
+* Version 1.0 supports Scala 2.10.0-M7
+* Version 0.6.10 supports Scala 2.9.2, 2.9.1-1, 2.9.1, 2.9.0-1, 2.9.0, 2.8.2,
+  2.8.1 and 2.8.0.
 
 ### Installing with Maven
 
@@ -27,7 +28,7 @@ rest for you:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.6.9`
+* Version: `0.6.10` or `1.0`
 * Type: `jar`
 
 For example:
@@ -35,7 +36,7 @@ For example:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.9.2</artifactId>
-      <version>0.6.9</version>
+      <version>0.6.10</version>
     </dependency>
 
 For more information on using Maven and Scala, see Josh Suereth's
@@ -57,6 +58,12 @@ If you're using [SBT][] 0.11.x to compile your code, you can use the
 following line in your `build.sbt` file (for Quick Configuration). If
 you're using an SBT 0.11.x Full Configuration, you're obviously smart
 enough to figure out what to do, on your own.
+
+If you're using Scala 2.10, use:
+
+    libraryDependencies += "org.clapper" % "grizzled-slf4j_2.10" % "1.0"
+
+If you're using Scala 2.9.x or earlier, use:
 
     libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.9"
 
@@ -81,7 +88,15 @@ You can download a tarball or zip file of the source from the
 The source code for Grizzled SLF4J is maintained on [GitHub][]. To clone
 the repository, run this command:
 
-    git clone git://github.com/bmc/grizzled-slf4j.git
+    $ git clone git://github.com/bmc/grizzled-slf4j.git
+
+Note: That gets you the trunk, which supports Scala 2.10 and later. If you
+want the code for Scala 2.9, switch to the [release-0.6.10-fixes][] branch:
+
+    $ cd grizzled-scala
+    $ git co release-0.6.10-fixes
+
+[release-0.6.10-fixes]: https://github.com/bmc/grizzled-slf4j/tree/release-0.6.10-fixes
 
 ### Building
 
@@ -264,5 +279,5 @@ request. Along with any patch you send:
 [SLF4J]: http://slf4j.org/
 [call-by-name]: http://eed3si9n.com/scala-and-evaluation-strategy
 [SBT cross-building]: http://code.google.com/p/simple-build-tool/wiki/CrossBuild
-[changelog]: CHANGELOG.html
+[changelog]: https://github.com/bmc/grizzled-slf4j/blob/master/CHANGELOG.md
 [ls.implicit.ly]: http://ls.implicit.ly
