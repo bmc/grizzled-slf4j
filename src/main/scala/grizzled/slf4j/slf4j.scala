@@ -44,6 +44,8 @@ import org.slf4j.{Logger => SLF4JLogger}
 /** Scala front-end to a SLF4J logger.
   */
 class Logger(val logger: SLF4JLogger) {
+  import scala.language.implicitConversions
+
   /** Get the name associated with this logger.
     *
     * @return the name.
@@ -298,6 +300,8 @@ trait Logging {
 /** A factory for retrieving an SLF4JLogger.
   */
 object Logger {
+  import scala.reflect.{classTag, ClassTag}
+
   /** The name associated with the root logger.
     */
   val RootLoggerName = SLF4JLogger.ROOT_LOGGER_NAME
@@ -326,7 +330,7 @@ object Logger {
     *
     * @return the `Logger`.
     */
-  def apply[C](implicit m: Manifest[C]): Logger = apply(m.erasure.getName)
+  def apply[C: ClassTag](): Logger = apply(classTag[C].runtimeClass.getName)
 
   /** Get the root logger.
     *
