@@ -1,0 +1,4 @@
+* Now supports Scala 2.10.0-M7, in version 1.0. Prior versions of Scala
+  are supported in version 0.6.x (via a Git branch) going forward.
+* Upgraded to SBT 0.12.0.
+* Upgraded to SLF4J 1.7.1
