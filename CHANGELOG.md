@@ -1,7 +1,4 @@
----
-title: Change log for Grizzled SLF4J
-layout: default
----
+# Change Log for grizzled-slf4j
 
 Version 1.0:
 
