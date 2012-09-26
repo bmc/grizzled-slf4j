@@ -11,12 +11,8 @@ under a BSD license.
 
 ## Installation
 
-Grizzled SLF4J is published to the `oss.sonatype.org` repository. Sonatype
-does *not* automatically push artifacts to the [Maven Central Repository][],
-so you have to pull your artifacts from Sonatype, itself. If you're using
-[SBT][], that's not a problem, since SBT automitically searches the
-Sonatype repository. If you're using [Maven][], you may have to specify
-the repository directly. See below for how to do that.
+Grizzled SLF4J is published to the `oss.sonatype.org` repository and
+automatically sync'd with the [Maven Central Repository][].
 
 * Version 1.0 supports Scala 2.10.0-M7
 * Version 0.6.10 supports Scala 2.9.2, 2.9.1-1, 2.9.1, 2.9.0-1, 2.9.0, 2.8.2,
@@ -33,14 +29,6 @@ rest for you:
 * Type: `jar`
 
 For example:
-
-    <repositories>
-      <repository>
-        <id>SonatypeOSS</id>
-        <name>Sonatype OSS Repository</name>
-        <url>https://oss.sonatype.org/content/groups/public/</url>
-      </repository>
-    </repositories>
 
     <dependency>
       <groupId>org.clapper</groupId>
