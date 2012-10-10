@@ -180,7 +180,7 @@ class Logger(val logger: SLF4JLogger) {
   */
 trait Logging {
   // The logger. Instantiated the first time it's used.
-  private lazy val _logger = Logger(getClass)
+  @transient private lazy val _logger = Logger(getClass)
 
   /** Get the `Logger` for the class that mixes this trait in. The `Logger`
     * is created the first time this method is call. The other methods (e.g.,
