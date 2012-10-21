@@ -14,6 +14,7 @@ under a BSD license.
 Grizzled SLF4J is published to the `oss.sonatype.org` repository and
 automatically sync'd with the [Maven Central Repository][].
 
+* Version 1.0.1 supports Scala 2.10.0-RC1
 * Version 1.0 supports Scala 2.10.0-M7
 * Version 0.6.10 supports Scala 2.9.2, 2.9.1-1, 2.9.1, 2.9.0-1, 2.9.0, 2.8.2,
   2.8.1 and 2.8.0.
@@ -25,15 +26,15 @@ rest for you:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.6.10` or `1.0`
+* Version: `0.6.10`, `1.0`, or `1.0.1`
 * Type: `jar`
 
 For example:
 
     <dependency>
       <groupId>org.clapper</groupId>
-      <artifactId>grizzled-slf4j_2.9.2</artifactId>
-      <version>0.6.10</version>
+      <artifactId>grizzled-slf4j_2.10</artifactId>
+      <version>1.0.1</version>
     </dependency>
 
 For more information on using Maven and Scala, see Josh Suereth's
@@ -58,11 +59,11 @@ enough to figure out what to do, on your own.
 
 If you're using Scala 2.10, use:
 
-    libraryDependencies += "org.clapper" % "grizzled-slf4j_2.10" % "1.0"
+    libraryDependencies += "org.clapper" % "grizzled-slf4j_2.10" % "1.0.1"
 
 If you're using Scala 2.9.x or earlier, use:
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.9"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.1
 
 Grizzled SLF4J is also registered with [Doug Tangren][]'s excellent
 [ls.implicit.ly][] catalog. If you use the `ls` SBT plugin, you can install
