@@ -1,5 +1,10 @@
 # Change Log for grizzled-slf4j
 
+Version 1.0.1:
+
+* Cross-compiled and published for Scala 2.10.0-RC1.
+* Converted to use ScalaTest 2.0, which changes `expect` to `expectResult`.
+
 Version 1.0:
 
 * Now supports Scala 2.10.0-M7, in version 1.0. Prior versions of Scala
