@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "1.0"
+version := "1.0.1"
 
 licenses := Seq("BSD" -> url("http://software.clapper.org/grizzled-slf4j/license.html"))
 
@@ -22,14 +22,14 @@ homepage := Some(url("http://software.clapper.org/grizzled-slf4j/"))
 
 description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
-scalaVersion := "2.10.0-M7"
+scalaVersion := "2.10.0-RC1"
 
 // ---------------------------------------------------------------------------
 // Additional compiler options and plugins
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
-crossScalaVersions := Seq("2.10.0-M7")
+crossScalaVersions := Seq("2.10.0-RC1")
 
 seq(lsSettings :_*)
 
@@ -45,20 +45,17 @@ seq(lsSettings :_*)
 libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
     // Select ScalaTest version based on Scala version
     val scalatestVersionMap = Map(
-      "2.8.0"     -> ("scalatest_2.8.0", "1.3.1.RC2"),
-      "2.8.1"     -> ("scalatest_2.8.1", "1.7.1"),
-      "2.8.2"     -> ("scalatest_2.8.2", "1.7.1"),
-      "2.9.0"     -> ("scalatest_2.9.0", "1.7.1"),
-      "2.9.0-1"   -> ("scalatest_2.9.0-1", "1.7.1"),
-      "2.9.1"     -> ("scalatest_2.9.1", "1.7.1"),
-      "2.9.1-1"   -> ("scalatest_2.9.1", "1.7.1"),
-      "2.9.2"     -> ("scalatest_2.9.1", "1.7.1"),
-      "2.10.0-M7" -> ("scalatest_2.10.0-M7", "1.9-2.10.0-M7-B1")
+      "2.10.0-RC1" -> ("scalatest_2.10.0-RC1", "2.0.M4-2.10.0-RC1-B1")
     )
     val (scalatestArtifact, scalatestVersion) = scalatestVersionMap.getOrElse(
-        sv, error("Unsupported Scala version: " + scalaVersion)
+        sv, error("Unsupported Scala version for ScalaTest: " + scalaVersion)
     )
     deps :+ "org.scalatest" % scalatestArtifact % scalatestVersion % "test"
+}
+
+libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
+  // ScalaTest still uses the (deprecated) scala.actors API.
+  deps :+ "org.scala-lang" % "scala-actors" % sv % "test"
 }
 
 // ---------------------------------------------------------------------------
