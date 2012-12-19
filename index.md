@@ -63,7 +63,7 @@ If you're using Scala 2.10, use:
 
 If you're using Scala 2.9.x or earlier, use:
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.1
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.10"
 
 Grizzled SLF4J is also registered with [Doug Tangren][]'s excellent
 [ls.implicit.ly][] catalog. If you use the `ls` SBT plugin, you can install
