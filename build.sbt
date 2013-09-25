@@ -29,8 +29,6 @@ scalaVersion := "2.10.2"
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
-crossScalaVersions := Seq("2.10.0-RC1")
-
 seq(lsSettings :_*)
 
 (LsKeys.tags in LsKeys.lsync) := Seq(
