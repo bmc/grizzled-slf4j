@@ -44,11 +44,6 @@ libraryDependencies ++= Seq(
     "org.slf4j" % "slf4j-api" % "1.7.5"
 )
 
-libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
-  // ScalaTest still uses the (deprecated) scala.actors API.
-  deps :+ "org.scala-lang" % "scala-actors" % sv % "test"
-}
-
 // ---------------------------------------------------------------------------
 // Publishing criteria
 
