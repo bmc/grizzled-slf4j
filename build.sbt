@@ -22,7 +22,7 @@ homepage := Some(url("http://software.clapper.org/grizzled-slf4j/"))
 
 description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
-scalaVersion := "2.10.0-RC1"
+scalaVersion := "2.10.2"
 
 // ---------------------------------------------------------------------------
 // Additional compiler options and plugins
@@ -39,31 +39,15 @@ seq(lsSettings :_*)
 
 (description in LsKeys.lsync) <<= description(d => d)
 
-// ---------------------------------------------------------------------------
-// ScalaTest dependendency
-
-libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
-    // Select ScalaTest version based on Scala version
-    val scalatestVersionMap = Map(
-      "2.10.0-RC1" -> ("scalatest_2.10.0-RC1", "2.0.M4-2.10.0-RC1-B1")
-    )
-    val (scalatestArtifact, scalatestVersion) = scalatestVersionMap.getOrElse(
-        sv, error("Unsupported Scala version for ScalaTest: " + scalaVersion)
-    )
-    deps :+ "org.scalatest" % scalatestArtifact % scalatestVersion % "test"
-}
+libraryDependencies ++= Seq(
+    "org.scalatest" %% "scalatest" % "2.0.M7" % "test",
+    "org.slf4j" % "slf4j-api" % "1.7.5"
+)
 
 libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
   // ScalaTest still uses the (deprecated) scala.actors API.
   deps :+ "org.scala-lang" % "scala-actors" % sv % "test"
 }
-
-// ---------------------------------------------------------------------------
-// Other dependendencies
-
-libraryDependencies ++= Seq(
-  "org.slf4j" % "slf4j-api" % "1.7.1"
-)
 
 // ---------------------------------------------------------------------------
 // Publishing criteria
