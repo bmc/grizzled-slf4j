@@ -22,7 +22,9 @@ homepage := Some(url("http://software.clapper.org/grizzled-slf4j/"))
 
 description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.11.0"
+
+crossScalaVersions := Seq("2.10.3", "2.11.0")
 
 // ---------------------------------------------------------------------------
 // Additional compiler options and plugins
@@ -38,7 +40,7 @@ seq(lsSettings :_*)
 (description in LsKeys.lsync) <<= description(d => d)
 
 libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "2.0.M7" % "test",
+    "org.scalatest" %% "scalatest" % "2.1.3" % "test",
     "org.slf4j" % "slf4j-api" % "1.7.5"
 )
 
