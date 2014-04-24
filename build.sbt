@@ -44,6 +44,8 @@ libraryDependencies ++= Seq(
     "org.slf4j" % "slf4j-api" % "1.7.7"
 )
 
+seq(bintraySettings: _*)
+
 // ---------------------------------------------------------------------------
 // Publishing criteria
 
