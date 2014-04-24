@@ -1,0 +1,4 @@
+* Added cross-compilation for Scala 2.11. Updated Scala 2.10 to 2.10.3.
+  (Via @takezoe)
+* Updated to SLF4J version 1.7.7.
+* Artifacts are now published to Bintray.

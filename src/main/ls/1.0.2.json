@@ -1,0 +1,21 @@
+{
+  "organization" : "org.clapper",
+  "name" : "grizzled-slf4j",
+  "version" : "1.0.2",
+  "description" : "A Scala-friendly wrapper for the SLF4J logging framework",
+  "site" : "http://software.clapper.org/grizzled-slf4j/",
+  "tags" : [ "log", "logger", "logging", "slf4j", "grizzled", "wrapper" ],
+  "docs" : "",
+  "resolvers" : [ "https://oss.sonatype.org/content/repositories/releases" ],
+  "dependencies" : [ {
+    "organization" : "org.slf4j",
+    "name" : "slf4j-api",
+    "version" : "1.7.7"
+  } ],
+  "scalas" : [ "2.10.3", "2.11.0" ],
+  "licenses" : [ {
+    "name" : "BSD",
+    "url" : "http://software.clapper.org/grizzled-slf4j/license.html"
+  } ],
+  "sbt" : false
+}

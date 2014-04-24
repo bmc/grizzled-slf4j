@@ -1,5 +1,12 @@
 # Change Log for grizzled-slf4j
 
+Version 1.0.2:
+
+* Added cross-compilation for Scala 2.11. Updated Scala 2.10 to 2.10.3.
+  (Via @takezoe)
+* Updated to SLF4J version 1.7.7.
+* Artifacts are now published to Bintray.
+
 Version 1.0.1:
 
 * Cross-compiled and published for Scala 2.10.0-RC1.

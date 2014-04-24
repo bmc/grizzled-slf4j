@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "1.0.1"
+version := "1.0.2"
 
 licenses := Seq("BSD" -> url("http://software.clapper.org/grizzled-slf4j/license.html"))
 
@@ -41,19 +41,13 @@ seq(lsSettings :_*)
 
 libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "2.1.3" % "test",
-    "org.slf4j" % "slf4j-api" % "1.7.5"
+    "org.slf4j" % "slf4j-api" % "1.7.7"
 )
 
 // ---------------------------------------------------------------------------
 // Publishing criteria
 
-publishTo <<= version { v: String =>
-  val nexus = "https://oss.sonatype.org/"
-  if (v.trim.endsWith("SNAPSHOT"))
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
+// Don't set publishTo. The Bintray plugin does that automatically.
 
 publishMavenStyle := true
 

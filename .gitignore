@@ -11,3 +11,6 @@ src/testproject/project/boot/
 src/testproject/project/target/
 src/testproject/target/
 *.sublime-*
+.idea
+.idea_modules
+atlassian-ide-plugin.xml
