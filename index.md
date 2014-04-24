@@ -11,9 +11,13 @@ under a BSD license.
 
 ## Installation
 
-Grizzled SLF4J is published to the `oss.sonatype.org` repository and
-automatically sync'd with the [Maven Central Repository][].
+Grizzled SLF4J is published to the
+[Bintray Maven repository](https://bintray.com/bmc/maven), which is
+automatically linked to Bintray's [JCenter](https://bintray.com/bintray/jcenter)
+repository. (From JCenter, it's eventually pushed to the
+[Maven Central Repository][].)
 
+* Version 1.0.2 supports Scala 2.11 and 2.10
 * Version 1.0.1 supports Scala 2.10.0-RC1
 * Version 1.0 supports Scala 2.10.0-M7
 * Version 0.6.10 supports Scala 2.9.2, 2.9.1-1, 2.9.1, 2.9.0-1, 2.9.0, 2.8.2,
@@ -26,7 +30,7 @@ rest for you:
 
 * Group ID: `org.clapper`
 * Artifact ID: `grizzled-slf4j_`*scala-version*
-* Version: `0.6.10`, `1.0`, or `1.0.1`
+* Version: The usual
 * Type: `jar`
 
 For example:
@@ -34,36 +38,59 @@ For example:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.10</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
+
+If you cannot resolve the artifact, then add the JCenter repository:
+
+    <repositories>
+      <repository>
+        <snapshots>
+          <enabled>false</enabled>
+        </snapshots>
+        <id>central</id>
+        <name>bintray</name>
+        <url>http://jcenter.bintray.com</url>
+      </repository>
+      ...
+    </repositories>
 
 For more information on using Maven and Scala, see Josh Suereth's
 [Scala Maven Guide][].
 
 ### Using with SBT
 
-#### 0.7.x
+#### 0.11.x/0.12.x
 
-If you're using [SBT][] 0.7.x to compile your code, you can place the
-following line in your project file (i.e., the Scala file in your
-`project/build/` directory):
+If you're using [SBT][] 0.11.x or 0.12.x to compile your code, you can use the
+following line in your build.sbt file (for Quick Configuration).
 
-    val grizzled_sl4fj = "org.clapper" %% "grizzled-slf4j" % "0.6.9"
+    repositories += "JCenter" at "http://jcenter.bintray.com/"
 
-#### 0.11.x
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.2"
 
-If you're using [SBT][] 0.11.x to compile your code, you can use the
-following line in your `build.sbt` file (for Quick Configuration). If
-you're using an SBT 0.11.x Full Configuration, you're obviously smart
-enough to figure out what to do, on your own.
+You only need the `repositories` line if the artifact cannot be resolved (e.g.,
+has not, for some reason, been pushed to Maven Central yet).
 
-If you're using Scala 2.10, use:
+#### 0.13.x
 
-    libraryDependencies += "org.clapper" % "grizzled-slf4j_2.10" % "1.0.1"
+With SBT 0.13.x, you can just use [Doug Tangren's](https://github.com/softprops/)
+`bintray-sbt` plugin. In your `project/plugins.sbt` file, add:
 
-If you're using Scala 2.9.x or earlier, use:
+    resolvers += Resolver.url(
+      "bintray-sbt-plugin-releases",
+      url("http://dl.bintray.com/content/sbt/sbt-plugin-releases"))(
+        Resolver.ivyStylePatterns)
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "0.6.10"
+    addSbtPlugin("me.lessis" % "bintray-sbt" % "0.1.1")
+
+Then, in your `build.sbt` file, add:
+
+    seq(bintrayResolverSettings:_*)
+
+That automatically adds the appropriate Bintray repositories. Finally, add:
+
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.2"
 
 Grizzled SLF4J is also registered with [Doug Tangren][]'s excellent
 [ls.implicit.ly][] catalog. If you use the `ls` SBT plugin, you can install
