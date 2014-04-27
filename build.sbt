@@ -31,7 +31,7 @@ crossScalaVersions := Seq("2.10.3", "2.11.0")
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
-seq(lsSettings :_*)
+lsSettings
 
 (LsKeys.tags in LsKeys.lsync) := Seq(
   "log", "logger", "logging", "slf4j", "grizzled", "wrapper"
@@ -44,7 +44,13 @@ libraryDependencies ++= Seq(
     "org.slf4j" % "slf4j-api" % "1.7.7"
 )
 
-seq(bintraySettings: _*)
+bintraySettings
+
+bintray.Keys.packageLabels in bintray.Keys.bintray := (LsKeys.tags in LsKeys.lsync).value
+
+externalResolvers in LsKeys.lsync := (resolvers in bintray.Keys.bintray).value
+
+homepage := Some(url("https://github.com/bmc/%s/#readme".format(name.value)))
 
 // ---------------------------------------------------------------------------
 // Publishing criteria
@@ -66,7 +72,7 @@ pomExtra := (
     <developer>
       <id>bmc</id>
       <name>Brian Clapper</name>
-      <url>http://www.clapper.org/bmc</url>
+      <url>https://github.com/bmc</url>
     </developer>
   </developers>
 )
