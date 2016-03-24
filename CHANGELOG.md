@@ -1,5 +1,12 @@
 # Change Log for grizzled-slf4j
 
+Version 1.0.3:
+
+* Now compiles against Scala 2.12, as well as 2.11 and 2.10.
+* Updated to SBT 0.13.11.
+* Added `activator`, for a self-bootstrapping build.
+* Updated license to BSD 3-Clause license.
+
 Version 1.0.2:
 
 * Added cross-compilation for Scala 2.11. Updated Scala 2.10 to 2.10.3.
