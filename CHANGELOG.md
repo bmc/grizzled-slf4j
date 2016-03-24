@@ -6,6 +6,8 @@ Version 1.0.3:
 * Updated to SBT 0.13.11.
 * Added `activator`, for a self-bootstrapping build.
 * Updated license to BSD 3-Clause license.
+* Updated versions of PGP and Bintray SBT plugins.
+* Removed "ls" SBT plugin.
 
 Version 1.0.2:
 

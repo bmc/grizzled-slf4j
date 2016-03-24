@@ -43,26 +43,10 @@ def mappedDep(dep: sbt.ModuleID): sbt.ModuleID = {
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
-lsSettings
-
-(LsKeys.tags in LsKeys.lsync) := Seq(
-  "log", "logger", "logging", "slf4j", "grizzled", "wrapper"
-)
-
-(description in LsKeys.lsync) <<= description(d => d)
-
 libraryDependencies ++= Seq(
     mappedDep("org.scalatest" %% "scalatest" % "2.2.6" % "test"),
     "org.slf4j" % "slf4j-api" % "1.7.7"
 )
-
-bintraySettings
-
-bintray.Keys.packageLabels in bintray.Keys.bintray := (LsKeys.tags in LsKeys.lsync).value
-
-externalResolvers in LsKeys.lsync := (resolvers in bintray.Keys.bintray).value
-
-homepage := Some(url("https://github.com/bmc/%s/#readme".format(name.value)))
 
 // ---------------------------------------------------------------------------
 // Publishing criteria
