@@ -1,5 +1,9 @@
 # Change Log for grizzled-slf4j
 
+Version 1.0.4:
+
+* Built against Scala 2.12.0-M4, instead of -M1.
+
 Version 1.0.3:
 
 * Now compiles against Scala 2.12, as well as 2.11 and 2.10.
