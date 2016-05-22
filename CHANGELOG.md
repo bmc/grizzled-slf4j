@@ -1,5 +1,10 @@
 # Change Log for grizzled-slf4j
 
+Version 1.0.5:
+
+* Updated version of Lightbend Activator.
+* Added support for Travis CI.
+
 Version 1.0.4:
 
 * Built against Scala 2.12.0-M4, instead of -M1.
