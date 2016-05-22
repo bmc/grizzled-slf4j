@@ -1,6 +1,8 @@
 Grizzled-SLF4J: A simple, Scala-friendly front-end to [SLF4J][].
 ================================================================
 
+[![Build Status](https://travis-ci.org/bmc/grizzled-slf4j.svg?branch=master)](https://travis-ci.org/bmc/grizzled-slf4j)
+
 The [Grizzled SLF4J][grizzled-slf4j] package provides a very thin
 Scala-friendly layer on top of the [SLF4J][] (Simple Logging Façade for
 Java) API. It is released under a BSD license. Please see the
