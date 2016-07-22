@@ -1,5 +1,10 @@
 # Change Log for grizzled-slf4j
 
+Version 1.1.0:
+
+* Added SLF4J Marker support via pull request from Colin King
+  (`richard.colin.king` _at_ `gmail.com`).
+
 Version 1.0.5:
 
 * Updated version of Lightbend Activator.
