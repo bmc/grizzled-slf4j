@@ -46,7 +46,7 @@ def mappedDep(dep: sbt.ModuleID): sbt.ModuleID = {
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "2.2.6" % "test",
+    "org.scalatest" %% "scalatest" % "3.0.0-RC4" % "test",
     "org.slf4j" % "slf4j-api" % "1.7.7"
 )
 
