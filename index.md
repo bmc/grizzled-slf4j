@@ -17,6 +17,9 @@ automatically linked to Bintray's [JCenter](https://bintray.com/bintray/jcenter)
 repository. (From JCenter, it's eventually pushed to the
 [Maven Central Repository][].)
 
+* Version 1.1.0 supports Scala 2.10, 2.11, and 2.12-M5
+* Version 1.0.4 supports Scala 2.10, 2.11, and 2.12-M4
+* Version 1.0.3 supports Scala 2.10, 2.11, and 2.12-M1
 * Version 1.0.2 supports Scala 2.11 and 2.10
 * Version 1.0.1 supports Scala 2.10.0-RC1
 * Version 1.0 supports Scala 2.10.0-M7
@@ -38,7 +41,7 @@ For example:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.10</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.3</version>
     </dependency>
 
 If you cannot resolve the artifact, then add the JCenter repository:
@@ -60,43 +63,9 @@ For more information on using Maven and Scala, see Josh Suereth's
 
 ### Using with SBT
 
-#### 0.11.x/0.12.x
+Add the following to your SBT build:
 
-If you're using [SBT][] 0.11.x or 0.12.x to compile your code, you can use the
-following line in your build.sbt file (for Quick Configuration).
-
-    repositories += "JCenter" at "http://jcenter.bintray.com/"
-
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.2"
-
-You only need the `repositories` line if the artifact cannot be resolved (e.g.,
-has not, for some reason, been pushed to Maven Central yet).
-
-#### 0.13.x
-
-With SBT 0.13.x, you can just use [Doug Tangren's](https://github.com/softprops/)
-`bintray-sbt` plugin. In your `project/plugins.sbt` file, add:
-
-    resolvers += Resolver.url(
-      "bintray-sbt-plugin-releases",
-      url("http://dl.bintray.com/content/sbt/sbt-plugin-releases"))(
-        Resolver.ivyStylePatterns)
-
-    addSbtPlugin("me.lessis" % "bintray-sbt" % "0.1.1")
-
-Then, in your `build.sbt` file, add:
-
-    seq(bintrayResolverSettings:_*)
-
-That automatically adds the appropriate Bintray repositories. Finally, add:
-
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.2"
-
-Grizzled SLF4J is also registered with [Doug Tangren][]'s excellent
-[ls.implicit.ly][] catalog. If you use the `ls` SBT plugin, you can install
-Grizzled SLF4J with
-
-    sbt> ls-install grizzled-slf4j
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.4"
 
 ## Building from Source
 
@@ -115,26 +84,18 @@ the repository, run this command:
 
     $ git clone git://github.com/bmc/grizzled-slf4j.git
 
-Note: That gets you the trunk, which supports Scala 2.10 and later. If you
-want the code for Scala 2.9, switch to the [release-0.6.10-fixes][] branch:
-
-    $ cd grizzled-scala
-    $ git co release-0.6.10-fixes
-
-[release-0.6.10-fixes]: https://github.com/bmc/grizzled-slf4j/tree/release-0.6.10-fixes
-
 ### Building
 
-Building the library requires [SBT][]. Install SBT, as described at the SBT
-web site. Then, assuming you have an `sbt` shell script (or .BAT file, for
-Windows), run:
+Building the library requires [SBT][] 0.13.x, but you don't have to
+install it (unless you're building on Windows). Instead, just use the
+`./activator` script at the top level of the repository. The script,
+part of [Lightbend Activator](https://www.lightbend.com/activator/download),
+automatically downloads the appropriate versions of SBT and Scala for
+you. (You _do_ need to have an installed Java JDK. I recommend 1.8.)
 
-    sbt +update
+You can build with this one simple command:
 
-That command will pull down the external jars on which the Grizzled SLF4J
-Library depends. After that step, build the library with:
-
-    sbt +compile +package
+    ./activator +compile +package
 
 The resulting jar files will be under the top-level `target` directory, in
 subdirectories specific to each Scala version.
