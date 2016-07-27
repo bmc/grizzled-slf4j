@@ -1,12 +1,10 @@
 # Change Log for grizzled-slf4j
 
-Version 1.1.1:
-* Built against Scala 2.12.0-M5, instead of -M4.
-
 Version 1.1.0:
 
-* Added SLF4J Marker support via pull request from Colin King
-  (`richard.colin.king` _at_ `gmail.com`).
+* Added SLF4J Marker support via pull request from @hakujin.
+* Built against Scala 2.12.0-M5, instead of -M4.
+  (Update courtesy @drieks.)
 
 Version 1.0.5:
 
