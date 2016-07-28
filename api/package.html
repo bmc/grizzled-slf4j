@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>root - _root_</title>
@@ -18,16 +17,24 @@
          if(top === self) {
             var url = 'index.html';
             var hash = 'package';
-            window.location.href = url + '#' + hash;
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
          }
    	  </script>
     
         </head>
         <body class="value">
       <div id="definition">
-        <img src="lib/package_big.png" />
+        <img alt="Package" src="lib/package_big.png" />
         
-        <h1>root package</h1>
+        <h1>root package</h1><span class="permalink">
+      <a href="index.html#package" title="Permalink" target="_top">
+        <img src="lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -63,7 +70,8 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="_root_.grizzled" visbl="pub" data-isabs="false" fullComment="no" group="No Group">
+              <ol><li name="_root_.grizzled" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="grizzled"></a>
       <a id="grizzled:grizzled"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -73,7 +81,11 @@
       <span class="symbol">
         <a href="grizzled/package.html"><span class="name">grizzled</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="index.html#package@grizzled" title="Permalink" target="_top">
+        <img src="lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li></ol>
             </div>
@@ -89,8 +101,8 @@
         </div>
 
         <div id="groupedMembers">
-        <div class="group" name="No Group">
-              <h3>No Group</h3>
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
               
             </div>
         </div>
