@@ -17,7 +17,10 @@ automatically linked to Bintray's [JCenter](https://bintray.com/bintray/jcenter)
 repository. (From JCenter, it's eventually pushed to the
 [Maven Central Repository][].)
 
-* Version 1.0.2 supports Scala 2.11 and 2.10
+* Version 1.2.0 supports Scala 2.12-RC1, Scala 2.11 and 2.10
+* Version 1.1.0 supports Scala 2.12-M5, Scala 2.11 and 2.10
+* Versions 1.0.4 and 1.0.5 support Scala 2.12-M4, 2.11 and 2.10
+* Versions 1.0.2 and 1.0.3 support Scala 2.12-M1, 2.11 and 2.10
 * Version 1.0.1 supports Scala 2.10.0-RC1
 * Version 1.0 supports Scala 2.10.0-M7
 * Version 0.6.10 supports Scala 2.9.2, 2.9.1-1, 2.9.1, 2.9.0-1, 2.9.0, 2.8.2,
@@ -38,7 +41,7 @@ For example:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.10</artifactId>
-      <version>1.0.2</version>
+      <version>1.2.0</version>
     </dependency>
 
 If you cannot resolve the artifact, then add the JCenter repository:
@@ -67,7 +70,7 @@ following line in your build.sbt file (for Quick Configuration).
 
     repositories += "JCenter" at "http://jcenter.bintray.com/"
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.2"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.2.0"
 
 You only need the `repositories` line if the artifact cannot be resolved (e.g.,
 has not, for some reason, been pushed to Maven Central yet).
@@ -90,7 +93,7 @@ Then, in your `build.sbt` file, add:
 
 That automatically adds the appropriate Bintray repositories. Finally, add:
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.2"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.2.0"
 
 Grizzled SLF4J is also registered with [Doug Tangren][]'s excellent
 [ls.implicit.ly][] catalog. If you use the `ls` SBT plugin, you can install
