@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>slf4j - grizzled.slf4j</title>
@@ -18,16 +17,24 @@
          if(top === self) {
             var url = '../../index.html';
             var hash = 'grizzled.slf4j.package';
-            window.location.href = url + '#' + hash;
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
          }
    	  </script>
     
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../lib/package_big.png" />
+        <img alt="Package" src="../../lib/package_big.png" />
         <p id="owner"><a href="../package.html" class="extype" name="grizzled">grizzled</a></p>
-        <h1>slf4j</h1>
+        <h1>slf4j</h1><span class="permalink">
+      <a href="../../index.html#grizzled.slf4j.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -59,7 +66,8 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="grizzled.slf4j.Logger" visbl="pub" data-isabs="false" fullComment="no" group="No Group">
+              <ol><li name="grizzled.slf4j.Logger" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LoggerextendsAnyRef"></a>
       <a id="Logger:Logger"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -69,9 +77,14 @@
       <span class="symbol">
         <a href="Logger.html"><span class="name">Logger</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Scala front-end to a SLF4J logger.</p>
-    </li><li name="grizzled.slf4j.Logging" visbl="pub" data-isabs="true" fullComment="no" group="No Group">
+      </h4><span class="permalink">
+      <a href="../../index.html#grizzled.slf4j.package@LoggerextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Scala front-end to a SLF4J logger.</p>
+    </li><li name="grizzled.slf4j.Logging" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="LoggingextendsAnyRef"></a>
       <a id="Logging:Logging"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -81,8 +94,14 @@
       <span class="symbol">
         <a href="Logging.html"><span class="name">Logging</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Mix the <code>Logging</code> trait into a class to get:</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#grizzled.slf4j.package@LoggingextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mix the <code>Logging</code> trait into a class to get:</p><div class="fullcomment"><div class="comment cmt"><p>Mix the <code>Logging</code> trait into a class to get:</p><p>- Logging methods
+- A <code>Logger</code> object, accessible via the <code>log</code> property</p><p>Does not affect the public API of the class mixing it in.
+</p></div></div>
     </li></ol>
             </div>
 
@@ -90,7 +109,8 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="grizzled.slf4j.Logger" visbl="pub" data-isabs="false" fullComment="no" group="No Group">
+              <ol><li name="grizzled.slf4j.Logger" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Logger"></a>
       <a id="Logger:Logger"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -100,8 +120,12 @@
       <span class="symbol">
         <a href="Logger$.html"><span class="name">Logger</span></a>
       </span>
-      </h4>
-      <p class="comment cmt">A factory for retrieving an SLF4JLogger.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#grizzled.slf4j.package@Logger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A factory for retrieving an SLF4JLogger.</p>
     </li></ol>
             </div>
 
@@ -116,8 +140,8 @@
         </div>
 
         <div id="groupedMembers">
-        <div class="group" name="No Group">
-              <h3>No Group</h3>
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
               
             </div>
         </div>
