@@ -24,7 +24,7 @@ description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
 scalaVersion := "2.11.8"
 
-crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.0-M5")
+crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.0-RC1")
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -46,7 +46,7 @@ def mappedDep(dep: sbt.ModuleID): sbt.ModuleID = {
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.0.0-RC4" % "test",
+    "org.scalatest" %% "scalatest" % "3.0.0" % "test",
     "org.slf4j" % "slf4j-api" % "1.7.7"
 )
 
