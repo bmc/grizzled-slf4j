@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "1.2.0"
+version := "1.3.0"
 
 licenses := Seq("BSD" -> url("http://software.clapper.org/grizzled-slf4j/license.html"))
 

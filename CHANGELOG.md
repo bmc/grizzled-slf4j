@@ -1,8 +1,12 @@
 # Change Log for grizzled-slf4j
 
+Version 1.3.0
+
+* Built against Scala 2.12.0 (via pull request from @takezoe).
+
 Version 1.2.0:
 
-* Built against Scala 2.12.0-RC1 (via pull request form @xuwei-k).
+* Built against Scala 2.12.0-RC1 (via pull request from @xuwei-k).
 
 Version 1.1.0:
 
