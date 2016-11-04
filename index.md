@@ -17,6 +17,7 @@ automatically linked to Bintray's [JCenter](https://bintray.com/bintray/jcenter)
 repository. (From JCenter, it's eventually pushed to the
 [Maven Central Repository][].)
 
+* Version 1.3.0 supports Scala 2.12.0, Scala 2.11 and 2.10
 * Version 1.2.0 supports Scala 2.12-RC1, Scala 2.11 and 2.10
 * Version 1.1.0 supports Scala 2.12-M5, Scala 2.11 and 2.10
 * Versions 1.0.4 and 1.0.5 support Scala 2.12-M4, 2.11 and 2.10
@@ -40,12 +41,8 @@ For example:
 
     <dependency>
       <groupId>org.clapper</groupId>
-      <artifactId>grizzled-slf4j_2.10</artifactId>
-<<<<<<< HEAD
-      <version>1.2.0</version>
-=======
-      <version>1.0.3</version>
->>>>>>> 3ba1db22aca1afed53d1ed49e88bfa4478f91ecc
+      <artifactId>grizzled-slf4j_2.11</artifactId>
+      <version>1.3.0</version>
     </dependency>
 
 If you cannot resolve the artifact, then add the JCenter repository:
@@ -69,45 +66,7 @@ For more information on using Maven and Scala, see Josh Suereth's
 
 Add the following to your SBT build:
 
-<<<<<<< HEAD
-If you're using [SBT][] 0.11.x or 0.12.x to compile your code, you can use the
-following line in your build.sbt file (for Quick Configuration).
-
-    repositories += "JCenter" at "http://jcenter.bintray.com/"
-
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.2.0"
-
-You only need the `repositories` line if the artifact cannot be resolved (e.g.,
-has not, for some reason, been pushed to Maven Central yet).
-
-#### 0.13.x
-
-With SBT 0.13.x, you can just use [Doug Tangren's](https://github.com/softprops/)
-`bintray-sbt` plugin. In your `project/plugins.sbt` file, add:
-
-    resolvers += Resolver.url(
-      "bintray-sbt-plugin-releases",
-      url("http://dl.bintray.com/content/sbt/sbt-plugin-releases"))(
-        Resolver.ivyStylePatterns)
-
-    addSbtPlugin("me.lessis" % "bintray-sbt" % "0.1.1")
-
-Then, in your `build.sbt` file, add:
-
-    seq(bintrayResolverSettings:_*)
-
-That automatically adds the appropriate Bintray repositories. Finally, add:
-
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.2.0"
-
-Grizzled SLF4J is also registered with [Doug Tangren][]'s excellent
-[ls.implicit.ly][] catalog. If you use the `ls` SBT plugin, you can install
-Grizzled SLF4J with
-
-    sbt> ls-install grizzled-slf4j
-=======
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.4"
->>>>>>> 3ba1db22aca1afed53d1ed49e88bfa4478f91ecc
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.3.0"
 
 ## Building from Source
 
