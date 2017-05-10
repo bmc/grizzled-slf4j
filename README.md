@@ -9,7 +9,7 @@ top of the [SLF4J](http://slf4j.org/) (Simple Logging Façade for
 Java) API. It is released under a BSD license. Please see the
 [web site](http://software.clapper.org/grizzled-slf4j/) for details.
 
-**NOTE**: The trunk supports Scala 2.10 and later. For Scala 2.9.x and earlier,
+NOTE: The trunk supports Scala 2.10 and later. For Scala 2.9.x and earlier,
 see the [release-0.6.10-fixes](https://github.com/bmc/grizzled-slf4j/tree/release-0) branch.
 ---
 Copyright &copy; 2010-2017 Brian M. Clapper, <i>bmc@clapper.org</i>
