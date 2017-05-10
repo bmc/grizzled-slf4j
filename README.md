@@ -1,5 +1,4 @@
-Grizzled-SLF4J: A simple, Scala-friendly front-end to [SLF4J][].
-================================================================
+# Grizzled-SLF4J: A simple, Scala-friendly front-end to SLF4J
 
 [![Build Status](https://travis-ci.org/bmc/grizzled-slf4j.svg?branch=master)](https://travis-ci.org/bmc/grizzled-slf4j)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.clapper/grizzled-slf4j_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.clapper/grizzled-slf4j_2.11)
