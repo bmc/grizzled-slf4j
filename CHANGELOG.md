@@ -1,5 +1,13 @@
 # Change Log for grizzled-slf4j
 
+Version 1.3.1
+
+* `_logger` object in `Logging` trait is now transient. See
+  [pull request #28](https://github.com/bmc/grizzled-slf4j/pull/28).
+  Thanks to @deaktator for the PR.
+* Now built against Scala 2.11.11 and Scala 2.12.2, as well as 2.10.6.
+* Updated to SBT version 0.13.15.
+
 Version 1.3.0
 
 * Built against Scala 2.12.0 (via pull request from @takezoe).
