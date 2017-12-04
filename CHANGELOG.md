@@ -1,5 +1,12 @@
 # Change Log for grizzled-slf4j
 
+Version 1.3.2
+
+* Cross-builds updated to 2.10.7, 2.11.12, and 2.12.4.
+* Updated to use ScalaTest 3.0.4
+* Updated SLF4J dependency to 2.7.9
+* Now uses SBT 0.13.16
+
 Version 1.3.1
 
 * `_logger` object in `Logging` trait is now transient. See
