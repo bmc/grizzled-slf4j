@@ -22,9 +22,9 @@ homepage := Some(url("http://software.clapper.org/grizzled-slf4j/"))
 
 description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
-scalaVersion := "2.11.11"
+scalaVersion := "2.11.12"
 
-crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.4")
+crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.8")
 
 // ---------------------------------------------------------------------------
 // Helpers
