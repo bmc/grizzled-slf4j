@@ -8,4 +8,4 @@ top of the [SLF4J](http://slf4j.org/) (Simple Logging Façade for
 Java) API. It is released under a BSD license. Please see the
 [web site](http://software.clapper.org/grizzled-slf4j/) for details.
 
-Copyright &copy; 2010-2017 Brian M. Clapper, <i>bmc@clapper.org</i>
+Copyright &copy; 2010-2018 Brian M. Clapper, <i>bmc@clapper.org</i>
