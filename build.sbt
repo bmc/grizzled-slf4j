@@ -14,7 +14,7 @@ name := "grizzled-slf4j"
 
 organization := "org.clapper"
 
-version := "1.3.2"
+version := "1.3.3"
 
 licenses := Seq("BSD" -> url("http://software.clapper.org/grizzled-slf4j/license.html"))
 
@@ -24,21 +24,10 @@ description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
 scalaVersion := "2.11.12"
 
-crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.8")
+crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.8", "2.13.0-M5")
 
 // ---------------------------------------------------------------------------
 // Helpers
-
-// Take a dependency and map its cross-compiled version, creating a new
-// dependency. Temporary, until Scala 2.12 is for real.
-/*
-def mappedDep(dep: sbt.ModuleID): sbt.ModuleID = {
-  dep cross CrossVersion.binaryMapped {
-    case v if v startsWith "2.12" => "2.11"
-    case v => v.split("""\.""").take(2).mkString(".")
-  }
-}
-*/
 
 // ---------------------------------------------------------------------------
 // Additional compiler options and plugins
@@ -46,7 +35,7 @@ def mappedDep(dep: sbt.ModuleID): sbt.ModuleID = {
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.0.4" % Test,
+    "org.scalatest" %% "scalatest" % "3.0.6-SNAP5" % Test,
     "org.slf4j"      % "slf4j-api" % "1.7.9"
 )
 
