@@ -17,6 +17,7 @@ automatically linked to Bintray's [JCenter](https://bintray.com/bintray/jcenter)
 repository. (From JCenter, it's eventually pushed to the
 [Maven Central Repository][].)
 
+* Version 1.3.3 supports Scala 2.13.0 (built against -M5), Scala 2.12.x, Scala 2.11.x and 2.10
 * Versions 1.3.0 through 1.3.2 support Scala 2.12.x, Scala 2.11.x and 2.10
 * Version 1.2.0 supports Scala 2.12-RC1, Scala 2.11 and 2.10
 * Version 1.1.0 supports Scala 2.12-M5, Scala 2.11 and 2.10
@@ -42,7 +43,7 @@ For example:
     <dependency>
       <groupId>org.clapper</groupId>
       <artifactId>grizzled-slf4j_2.11</artifactId>
-      <version>1.3.2</version>
+      <version>1.3.3</version>
     </dependency>
 
 If you cannot resolve the artifact, then add the JCenter repository:
@@ -66,7 +67,7 @@ For more information on using Maven and Scala, see Josh Suereth's
 
 Add the following to your SBT build:
 
-    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.3.2"
+    libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.3.3"
 
 ## Building from Source
 
