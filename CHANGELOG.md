@@ -1,5 +1,11 @@
 # Change Log for grizzled-slf4j
 
+Version 1.3.4
+
+* Bumped SBT version to 1.2.8
+* Updated to use ScalaTest 3.0.8
+* Scala 2.13 cross-build updated to use version 2.13.0.
+
 Version 1.3.3
 
 * Bumped SBT version to 1.2.6.
