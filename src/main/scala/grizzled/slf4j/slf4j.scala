@@ -44,18 +44,18 @@ import org.slf4j.Marker
 
 /** Scala front-end to a SLF4J logger.
   */
-class Logger(val logger: SLF4JLogger) {
+class Logger(val logger: SLF4JLogger) extends Serializable {
   import scala.language.implicitConversions
 
   /** Get the name associated with this logger.
     *
     * @return the name.
     */
-  @inline final def name = logger.getName
+  @inline final def name: String = logger.getName
 
   /** Determine whether trace logging is enabled.
     */
-  @inline final def isTraceEnabled = logger.isTraceEnabled
+  @inline final def isTraceEnabled: Boolean = logger.isTraceEnabled
 
   /** Issue a trace logging message.
     *
@@ -86,7 +86,7 @@ class Logger(val logger: SLF4JLogger) {
 
   /** Determine whether debug logging is enabled.
     */
-  @inline final def isDebugEnabled = logger.isDebugEnabled
+  @inline final def isDebugEnabled: Boolean = logger.isDebugEnabled
 
   /** Issue a debug logging message.
     *
@@ -117,7 +117,7 @@ class Logger(val logger: SLF4JLogger) {
 
   /** Determine whether error logging is enabled.
     */
-  @inline final def isErrorEnabled = logger.isErrorEnabled
+  @inline final def isErrorEnabled: Boolean = logger.isErrorEnabled
 
   /** Issue a error logging message.
     *
@@ -148,7 +148,7 @@ class Logger(val logger: SLF4JLogger) {
 
   /** Determine whether info logging is enabled.
     */
-  @inline final def isInfoEnabled = logger.isInfoEnabled
+  @inline final def isInfoEnabled: Boolean = logger.isInfoEnabled
 
   /** Issue a info logging message.
     *
@@ -179,7 +179,7 @@ class Logger(val logger: SLF4JLogger) {
 
   /** Determine whether warn logging is enabled.
     */
-  @inline final def isWarnEnabled = logger.isWarnEnabled
+  @inline final def isWarnEnabled: Boolean = logger.isWarnEnabled
 
   /** Issue a warn logging message.
     *
@@ -245,11 +245,11 @@ trait Logging {
     *
     * @return the name.
     */
-  protected def loggerName = logger.name
+  protected def loggerName: String = logger.name
 
   /** Determine whether trace logging is enabled.
     */
-  protected def isTraceEnabled = logger.isTraceEnabled
+  protected def isTraceEnabled: Boolean = logger.isTraceEnabled
 
   /** Issue a trace logging message.
     *
@@ -279,7 +279,7 @@ trait Logging {
 
   /** Determine whether debug logging is enabled.
     */
-  protected def isDebugEnabled = logger.isDebugEnabled
+  protected def isDebugEnabled: Boolean = logger.isDebugEnabled
 
   /** Issue a debug logging message.
     *
@@ -309,7 +309,7 @@ trait Logging {
 
   /** Determine whether trace logging is enabled.
     */
-  protected def isErrorEnabled = logger.isErrorEnabled
+  protected def isErrorEnabled: Boolean = logger.isErrorEnabled
 
   /** Issue a trace logging message.
     *
@@ -339,7 +339,7 @@ trait Logging {
 
   /** Determine whether trace logging is enabled.
     */
-  protected def isInfoEnabled = logger.isInfoEnabled
+  protected def isInfoEnabled: Boolean = logger.isInfoEnabled
 
   /** Issue a trace logging message.
     *
@@ -369,7 +369,7 @@ trait Logging {
 
   /** Determine whether trace logging is enabled.
     */
-  protected def isWarnEnabled = logger.isWarnEnabled
+  protected def isWarnEnabled: Boolean = logger.isWarnEnabled
 
   /** Issue a trace logging message.
     *
@@ -405,7 +405,7 @@ object Logger {
 
   /** The name associated with the root logger.
     */
-  val RootLoggerName = SLF4JLogger.ROOT_LOGGER_NAME
+  val RootLoggerName: String = SLF4JLogger.ROOT_LOGGER_NAME
 
   /** Get the logger with the specified name. Use `RootName` to get the
     * root logger.
