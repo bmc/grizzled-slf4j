@@ -24,7 +24,7 @@ description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
 scalaVersion := "2.12.11"
 
-crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.11", "2.13.1")
+crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.11", "2.13.1", "3.0.0-M3")
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -34,8 +34,17 @@ crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.11", "2.13.1")
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
+scalacOptions ++= {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((3, _)) =>
+          Seq("-source:3.0-migration", "-explain", "-explain-types")
+        case _ =>
+          Nil
+      }
+    }
+
 libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.0.8" % Test,
+    "org.scalatest" %% "scalatest" % "3.2.3" % Test,
     "org.slf4j"      % "slf4j-api" % "1.7.9"
 )
 
