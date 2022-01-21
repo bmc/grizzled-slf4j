@@ -22,9 +22,9 @@ homepage := Some(url("http://software.clapper.org/grizzled-slf4j/"))
 
 description := "A Scala-friendly wrapper for the SLF4J logging framework"
 
-scalaVersion := "2.12.11"
+ThisBuild / scalaVersion := "3.1.0"
 
-crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.11", "2.13.1")
+crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.15", "2.13.6", "3.1.0")
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -35,8 +35,8 @@ crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.11", "2.13.1")
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.0.8" % Test,
-    "org.slf4j"      % "slf4j-api" % "1.7.9"
+    "org.scalatest" %% "scalatest" % "3.2.10" % Test,
+    "org.slf4j"      % "slf4j-api" % "1.7.33"
 )
 
 // ---------------------------------------------------------------------------
@@ -46,7 +46,7 @@ libraryDependencies ++= Seq(
 
 publishMavenStyle := true
 
-publishArtifact in Test := false
+Test / publishArtifact  := false
 
 pomIncludeRepository := { _ => false }
 
