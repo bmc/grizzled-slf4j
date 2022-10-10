@@ -36,7 +36,7 @@ scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "3.0.8" % Test,
-    "org.slf4j"      % "slf4j-api" % "1.7.9"
+    "org.slf4j"      % "slf4j-api" % "2.0.3"
 )
 
 // ---------------------------------------------------------------------------
